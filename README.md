@@ -23,7 +23,7 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 
 ## Dataset used:
 * [Kaggle Dataset on Malaria](https://www.kaggle.com/datasets/iarunava/cell-images-for-detecting-malaria) 
-* [National Library of Medicine](https://lhncbc.nlm.nih.gov/LHC-downloads/downloads.html#malaria-datasets)
+* [Originally from National Library of Medicine](https://lhncbc.nlm.nih.gov/LHC-downloads/downloads.html#malaria-datasets)
 
 ## To run the app:
 
