@@ -12,7 +12,7 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 ## Programs Utilized:
 
 ### Backend 
-* Python
+* Python: pil, shutil, random
 * Flask
 * SQLite
 
@@ -29,20 +29,25 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 
 * Git clone- https://github.com/jnliou/project4.git 
 * cd into directory- project4
+* Extract the [ZIP file of original data](<Dataset\cell_images.zip>) to be able to run the [Jupyter Notebook Code for Data Preprocessing](<data_preprocess.ipynb>) for data processing. 
 * Start Flask app with [app.py](app.py)
 * Run [index.html](index.html) to view the dashboard in a browser
 
-## Data Pre Processing and Exploratory Data Analysis
+## Data Preprocessing and Exploratory Data Analysis
 
 ### Data Preprocessing 
-* [CSV file used for analysis](<data/updated-Datafile-Crime3 (Final).zip>)
-* [Jupyter Notebook Code for ETL](<ETL of the data.ipynb>)
+* [ZIP file of original data](<Dataset\cell_images.zip>)
+* [Jupyter Notebook Code for Data Preprocessing](<data_preprocess.ipynb>)
 
-WRITE HERE
+
+* The original dataset contained 3 folders, one named (cell_images\cell_images), one named (cell_images\Uninfected), and one named (cell_images\Parasitized). As the cell_images\cell_images folder contained the same data as the Uninfected and Parasitized folder, this folder was deleted to assist with easier processing of the data. 
+* Utilizing Jupyter Notebook and Python we randomly selected 500 photos from [Parasitized Cells](Dataset\cell_images\Parasitized) and 500 photos from [Uninfected Cells](Dataset\cell_images\Uninfected) and added the photos into a [new folder](Dataset\clean) with Parasitized Cells being in a folder called (output_parasitized) and the Uninfected Cells being in a folder called (output_uninfected). This cut down our photos form 27,558 to 1,000. 
+* From the randomized photos, we then converted the photos into 25x25 pixels, and from RBG to Black and White. The processed photos were added into two folders, with Parasitized Cells being in a folder called (output_parasitized_process) and the Uninfected Cells being in a folder called (output_uninfected_process).
+
 
 **Data Transformation**
 After cleaning, we transformed the data to make it suitable for our analysis and Machine Learning purposes. This involved the following:
-
+WRITE HERE 
 
 **Data Integration**
 Once we had consistent structures of data, we integrated it into a single DataFrame using SQLite.
