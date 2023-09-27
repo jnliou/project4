@@ -54,7 +54,7 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 
 * From the randomized photos, we then converted the photos into 25x25 pixels, and from RBG to Black and White. The processed photos were added into two folders, with Parasitized Cells being in a folder called [output_parasitized_process](Dataset/clean/output_parasitized_process) and the Uninfected Cells being in a folder called [output_uninfected_process](Dataset/clean/output_uninfected_process).
 
-![Example of before processing](Dataset/clean/output_parasitized/C33P1thinF_IMG_20150619_120742a_cell_210.png) ---> ![Example of after processing](Dataset/clean/output_parasitized_process/C33P1thinF_IMG_20150619_120742a_cell_210.png)
+From ![Example of before processing](Dataset/clean/output_parasitized/C33P1thinF_IMG_20150619_120742a_cell_210.png) to ![Example of after processing](Dataset/clean/output_parasitized_process/C33P1thinF_IMG_20150619_120742a_cell_210.png)
 
 
 **Data Transformation**
