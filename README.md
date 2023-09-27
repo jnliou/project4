@@ -32,6 +32,8 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 * Start Flask app with [app.py](app.py)
 * Run [index.html](index.html) to view the dashboard in a browser
 
+![Data Pipeline](<Dataset/Project Timeline Builder - Frame 1.jpg>)
+
 ## Data Cleaning and Exploratory Data Analysis
 
 ### Data Preprocessing 
