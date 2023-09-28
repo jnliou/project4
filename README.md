@@ -56,6 +56,40 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 
 From ![Example of before processing](Dataset/clean/output_parasitized/C33P1thinF_IMG_20150619_120742a_cell_210.png) to ![Example of after processing](Dataset/clean/output_parasitized_process/C33P1thinF_IMG_20150619_120742a_cell_210.png)
 
+## Exploratory Data Analysis
+Certainly! Below is a README format for the described comparison and analysis of cell images:
+
+---
+
+### Cell Image Analysis
+
+This repository contains an analysis of cell images comparing unprocessed vs. processed and uninfected vs. infected cells. Various image analysis techniques, including blob detection, edge detection, edge density, and average color comparison, were utilized to determine differences in characteristics or properties between the two.
+![Unprocessed Cell - Infected](Dataset/EDA/cells-unprocess.PNG)
+![Processed Cell - Infected](Dataset/EDA/cells-process.PNG)
+
+
+### Blob Detection Analysis
+
+### Mean Blob Size and Max Blob Size
+
+Blob detection was performed to identify and analyze blobs within the images. For both uninfected and infected cells, the mean blob size and the maximum blob size were calculated. Statistical differences were assessed using histograms and T-tests.
+
+### Edge Detection Analysis
+
+Edge detection was employed to visualize the differences between uninfected and infected cells in terms of their edge structures. The resulting images provide a clear visual representation of the variations in edges.
+![Edge Detection](Dataset/EDA/edgedetection.PNG)
+
+### Edge Density Analysis
+
+Edge density comparison between uninfected and infected cells was conducted. Histograms and T-tests were used to analyze the differences in edge density characteristics.
+
+### Average Color Analysis
+
+The average color of each image for infected and uninfected cells was compared. Histograms and T-tests were used to evaluate any statistical distinctions in average color properties.
+
+### Data Integration and Export
+
+The results of the various analyses were integrated into a single DataFrame. This DataFrame was saved as a CSV file named `eda.csv` for further analysis and reference.
 
 **Data Transformation**
 After cleaning, we transformed the data to make it suitable for our analysis and Machine Learning purposes. This involved the following:
