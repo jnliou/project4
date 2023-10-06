@@ -57,9 +57,6 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 From ![Example of before processing](Dataset/clean/output_parasitized/C33P1thinF_IMG_20150619_120742a_cell_210.png) to ![Example of after processing](Dataset/clean/output_parasitized_process/C33P1thinF_IMG_20150619_120742a_cell_210.png)
 
 ## Exploratory Data Analysis
-Certainly! Below is a README format for the described comparison and analysis of cell images:
-
----
 
 ### Cell Image Analysis
 
