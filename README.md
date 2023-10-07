@@ -49,14 +49,16 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 
 #### Notes on the Data Cleaning/Preprocessing Process
 * The original dataset contained 3 folders, one named ```cell_images\cell_images```, one named ```cell_images\Uninfected```, and one named ```cell_images\Parasitized```. As the ```cell_images\cell_images``` folder contained the same data as the Uninfected and Parasitized folders, this folder was deleted to assist with easier processing of the data. 
-* Utilizing Jupyter Notebook and Python we randomly selected 500 photos from ```Dataset\cell_images\Parasitized``` and 500 photos from ```Dataset\cell_images\Uninfected``` and added the photos into a [new folder](Dataset/clean) with Parasitized Cells being in a folder called [output_parasitized](Dataset/clean/output_parasitized) and the Uninfected Cells being in a folder called [Dataset/clean/output_uninfected](Dataset/clean/output_uninfected). This cut down our photos from **27,558** to **1,000**. 
+* Utilizing Jupyter Notebook and Python we randomly selected 500 photos from ```Dataset\cell_images\Parasitized``` and 500 photos from ```Dataset\cell_images\Uninfected``` and added the photos into a [new folder](Dataset/clean) with Parasitized Cells being in a folder called [output_parasitized](Dataset/clean/output_parasitized) and the Uninfected Cells being in a folder called [Dataset/clean/output_uninfected](Dataset/clean/output_uninfected). This cut down our photos from **27,558** to **5,000**. 
 
 
-* From the randomized photos, we then converted the photos into 25x25 pixels, and from RBG to Black and White. The processed photos were added into two folders, with Parasitized Cells being in a folder called [output_parasitized_process](Dataset/clean/output_parasitized_process) and the Uninfected Cells being in a folder called [output_uninfected_process](Dataset/clean/output_uninfected_process).
+* From the randomized photos, we then converted the photos into 25x25 pixels. The processed photos were added into two folders, with Parasitized Cells being in a folder called [test](Dataset/clean/output_parasitized_process) and the Uninfected Cells being in a folder called [train](Dataset/clean/output_uninfected_process).
 
 From ![Example of before processing](Dataset/clean/output_parasitized/C33P1thinF_IMG_20150619_120742a_cell_210.png) to ![Example of after processing](Dataset/clean/output_parasitized_process/C33P1thinF_IMG_20150619_120742a_cell_210.png)
 
 ## Exploratory Data Analysis
+
+Tableau Dashboard of Exploratory Data Analysis: https://public.tableau.com/app/profile/julia.liou6123/viz/EDAonCellImagesofMalaria-Tableau/RGB 
 
 ### Cell Image Analysis
 
@@ -74,6 +76,7 @@ Blob detection was performed to identify and analyze blobs within the images. Fo
 ### Edge Detection Analysis
 
 Edge detection was employed to visualize the differences between uninfected and infected cells in terms of their edge structures. The resulting images provide a clear visual representation of the variations in edges.
+
 ![Edge Detection](Dataset/EDA/edgedetection.PNG)
 
 ### Edge Density Analysis

@@ -1,0 +1,7 @@
+
+
+# ignore the large datasets
+Dataset/cell_images
+model.ipynb
+EDA - Tableau.twb
+PCA-clustering.ipynb
