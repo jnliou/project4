@@ -36,7 +36,7 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 
 ## Project Management:
 
-[Kaggle Dataset on Malaria]https://trello.com/b/ZZba331m/project-4 
+[Kaggle Dataset on Malaria](https://trello.com/b/ZZba331m/project-4) 
 
 ## Data Cleaning and Exploratory Data Analysis
 
