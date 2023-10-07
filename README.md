@@ -12,7 +12,7 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 ## Programs Utilized:
 
 ### Backend 
-* Python: pil, shutil, random
+* Python: pil, os, CV2
 * Flask
 * SQLite
 
@@ -34,6 +34,10 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 
 ![Data Pipeline](<Dataset/Project Timeline Builder - Frame 1.jpg>)
 
+## Project Management:
+
+[Kaggle Dataset on Malaria]https://trello.com/b/ZZba331m/project-4 
+
 ## Data Cleaning and Exploratory Data Analysis
 
 ### Data Preprocessing 
@@ -49,27 +53,27 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 
 #### Notes on the Data Cleaning/Preprocessing Process
 * The original dataset contained 3 folders, one named ```cell_images\cell_images```, one named ```cell_images\Uninfected```, and one named ```cell_images\Parasitized```. As the ```cell_images\cell_images``` folder contained the same data as the Uninfected and Parasitized folders, this folder was deleted to assist with easier processing of the data. 
-* Utilizing Jupyter Notebook and Python we randomly selected 500 photos from ```Dataset\cell_images\Parasitized``` and 500 photos from ```Dataset\cell_images\Uninfected``` and added the photos into a [new folder](Dataset/clean) with Parasitized Cells being in a folder called [output_parasitized](Dataset/clean/output_parasitized) and the Uninfected Cells being in a folder called [Dataset/clean/output_uninfected](Dataset/clean/output_uninfected). This cut down our photos from **27,558** to **5,000**. 
+*  We then converted the photos into 25x25 pixels.
+* Utilizing Jupyter Notebook and Python we selected 2500 photos from ```Dataset\cell_images\Parasitized``` and 2500 photos from ```Dataset\cell_images\Uninfected``` and added 1750 infected photos into ```cell_images\clean\train\infected_processed``` and   1750 uninfected photos to ```cell_images\clean\train\uninfected_processed``` for training data, and 750 infected photos into ```cell_images\clean\test\infected_processed``` and 750 uninfected photos into ```cell_images\clean\test\uninfected_processed``` for testing data. This cut down our photos from **27,558** to **5,000**. 
 
-
-* From the randomized photos, we then converted the photos into 25x25 pixels. The processed photos were added into two folders, with Parasitized Cells being in a folder called [test](Dataset/clean/output_parasitized_process) and the Uninfected Cells being in a folder called [train](Dataset/clean/output_uninfected_process).
-
-From ![Example of before processing](Dataset/clean/output_parasitized/C33P1thinF_IMG_20150619_120742a_cell_210.png) to ![Example of after processing](Dataset/clean/output_parasitized_process/C33P1thinF_IMG_20150619_120742a_cell_210.png)
+From ![Unprocessed image](<Dataset/EDA/infected cells-unprocess.png>) to ![processed image](<Dataset/EDA/infected cells-unprocess.png>).
 
 ## Exploratory Data Analysis
+
+![EDA Header](<Dataset/EDA/EDA header.png>)
 
 Tableau Dashboard of Exploratory Data Analysis: https://public.tableau.com/app/profile/julia.liou6123/viz/EDAonCellImagesofMalaria-Tableau/RGB 
 
 ### Cell Image Analysis
 
-This repository contains an analysis of cell images comparing unprocessed vs. processed and uninfected vs. infected cells. Various image analysis techniques, including blob detection, edge detection, edge density, and average color comparison, were utilized to determine differences in characteristics or properties between the two.
-![Unprocessed Cell - Infected](Dataset/EDA/cells-unprocess.PNG)
-![Processed Cell - Infected](Dataset/EDA/cells-process.PNG)
-
+This repository contains an analysis of cell images comparing unprocessed vs. processed and uninfected vs. infected cells. Various image analysis techniques, including blob detection, edge detection, edge density, and RGB color channel distribution, were utilized to determine differences in characteristics or properties between the two.
+![Infected](<Dataset/EDA/infected cells-process.png>)
+![Uninfected](<Dataset/EDA/uninfected cells-process.png>)
 
 ### Blob Detection Analysis
 
 ### Mean Blob Size and Max Blob Size
+![Blob Detection](Dataset/EDA/blobs.png)
 
 Blob detection was performed to identify and analyze blobs within the images. For both uninfected and infected cells, the mean blob size and the maximum blob size were calculated. Statistical differences were assessed using histograms and T-tests.
 
@@ -77,19 +81,19 @@ Blob detection was performed to identify and analyze blobs within the images. Fo
 
 Edge detection was employed to visualize the differences between uninfected and infected cells in terms of their edge structures. The resulting images provide a clear visual representation of the variations in edges.
 
-![Edge Detection](Dataset/EDA/edgedetection.PNG)
+![!\[Edge Detection\](Dataset/EDA/edgedetection.PNG)](Dataset/EDA/edgedetection.PNG)
 
 ### Edge Density Analysis
 
 Edge density comparison between uninfected and infected cells was conducted. Histograms and T-tests were used to analyze the differences in edge density characteristics.
 
-### Average Color Analysis
+### Average RGB Color Analysis
 
-The average color of each image for infected and uninfected cells was compared. Histograms and T-tests were used to evaluate any statistical distinctions in average color properties.
+The average RGB color distribution of each image for infected and uninfected cells was compared. Histograms and T-tests were used to evaluate any statistical distinctions in average RGB color distribution.
 
 ### Data Integration and Export
 
-The results of the various analyses were integrated into a single DataFrame. This DataFrame was saved as a CSV file named `eda.csv` for further analysis and reference.
+The results of the various analyses were integrated into 4 DataFrames. 2 for the training data: ```Dataset/eda_train_infect.csv```, ```Dataset/eda_train_uninfect.csv```, and two for the testing data: ```Dataset/eda_test_infect.csv```, ```Dataset/eda_test_uninfect.csv``` for further analysis and reference.
 
 **Data Transformation**
 After cleaning, we transformed the data to make it suitable for our analysis and Machine Learning purposes. This involved the following:
