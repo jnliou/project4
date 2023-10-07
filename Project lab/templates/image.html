@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Display Random Images</title>
+   <link rel="stylesheet" type="text/css" href="static/styles.css">
+</head>
+<body>
+   <div class="starry-background"></div>
+   <h1 class="title">Randomly Selected Images From S3</h1>
+   <button id="loadButton">Load Images</button>
+   <button id="refreshButton">Restart</button>
+   <div id="image-container">
+      {% for image_url, answer in zipped_data %}
+      <div class="image-block">
+         <img class="s3-image" src="{{ image_url }}" alt="Image" data-category="{{ answer }}" data-clicked="false" onclick="toggleChoice(this);">
+         <p class="filtered-item">{{ answer }}</p>
+      </div>
+ {% endfor %}
+   <button onclick="submitChoices()">Submit Choices</button>
+   <li class="filtered-item">GG</li>
+
+
+   
+   <!-- Link the JavaScript file -->
+   <script type='text/javascript' src="static/logic.js"></script>
+   <script src="static/stars.js"></script>
+
+   <div id="scores">Scores: </div>
+</body>
+
+</html>
