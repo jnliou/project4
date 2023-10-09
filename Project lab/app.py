@@ -87,7 +87,9 @@ def display_images():
         value = get_target_from_csv(df, image_filename)  # getting value from target column
         print(f' The VALUE IS: {value}')
         target_list_csv.append(value)
-    
+    #Converting numpy.int64 to native it to use session
+    target_list_csv = [int(item) for item in target_list_csv]
+    session['target_list_csv'] = target_list_csv
     
     #session['target_list_csv'] = target_list_csv
     #Here will be code to extract CNN value from csv
