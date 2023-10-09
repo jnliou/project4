@@ -1,7 +1,8 @@
-
-
-# ignore the large datasets
+# Ignore large datasets
 Dataset/cell_images
+
+# Ignore specific files
 model.ipynb
 EDA - Tableau.twb
 PCA-clustering.ipynb
+\xception_model.h5
