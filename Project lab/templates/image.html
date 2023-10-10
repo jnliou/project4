@@ -1,31 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Display Random Images</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
    <link rel="stylesheet" type="text/css" href="static/styles.css">
+   <h1 class="title">ML Model Mini Game</h1>
 </head>
 <body>
    <div class="starry-background"></div>
-   <h1 class="title">Randomly Selected Images From S3</h1>
+   
    <button id="loadButton">Load Images</button>
    <button id="refreshButton">Restart</button>
+   <button id="clearTableButton">Clear Table</button>
+
    <div id="image-container">
-      {% for image_url, answer in zipped_data %}
+      {% for image_url, model_answer, answer in zipped_data %}
       <div class="image-block">
-         <img class="s3-image" src="{{ image_url }}" alt="Image" data-category="{{ answer }}" data-clicked="false" onclick="toggleChoice(this);">
-         <p class="filtered-item">{{ answer }}</p>
+         <img class="s3-image" src="{{ image_url }}" alt="Image" onclick="toggleChoice(this, 'input-{{ loop.index }}');">
+         <input type="hidden" id="input-{{ loop.index }}" name="image-{{ loop.index }}" value="0">
+          <p class="filtered-item">Predicted: {{ model_answer }}</p>
+          <p class="filtered-item actual-answer" style="display:none;">Actual: {{ answer }}</p>
       </div>
- {% endfor %}
-   <button onclick="submitChoices()">Submit Choices</button>
-   <li class="filtered-item">GG</li>
+  {% endfor %}
+  <button id="revealButton" onclick="revealAnswers()">Reveal Answers</button>
+  
+  
+
+   <button id="submitButton" onclick="submitChoices()">Submit Choices</button>
+
 
 
    
-   <!-- Link the JavaScript file -->
+   <!-- Link to the JavaScript file -->
    <script type='text/javascript' src="static/logic.js"></script>
    <script src="static/stars.js"></script>
 
-   <div id="scores">Scores: </div>
+   <div id ="predictionScoreDisplay"> 
+   <p>Our Model Prediction got: {{ correct_count_prediction }} Correct</p>
+   </div>
+   <div id="scoresSection">
+      <table id="scoresTable">
+         <thead>
+             <tr>
+                 <th>User Score</th>
+                 <th>Model Score</th>
+             </tr>
+         </thead>
+         <tbody>
+             {% for score in scores %}
+                 <tr>
+                     <td>{{ score['User'] }}</td>
+                     <td>{{ score['Model'] }}</td>
+                 </tr>
+             {% endfor %}
+             <tr id="totalsRow">
+                 <td></td>
+                 <td></td>
+             </tr>
+         </tbody>
+     </table>
+     
+  </div>
+  
+
 </body>
 
 </html>

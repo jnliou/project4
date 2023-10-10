@@ -3,7 +3,12 @@
 
 
 .title {
-   color: yellow;
+   color: rgb(33, 40, 17);
+   font-size: 70px;
+}
+
+p{
+font-size: 40px;
 }
 
 #image-container {
@@ -17,7 +22,8 @@
 }
 
 .filtered-item {
-   color: rgb(157, 102, 35);
+   color: rgb(38, 71, 51);
+   font-size: 30px;
 }
 
 .input-section {
@@ -33,29 +39,41 @@
    margin-right: 10px;
 }
 
-#scores {
-   color: gold;             /* Set text color to gold */
-   position: absolute;      /* Position it absolutely relative to the closest positioned parent */
-   bottom: 10px;            /* Set it 10px from the bottom of the page */
-   left: 50%;               /* Center it horizontally */
-   transform: translateX(-50%); /* Adjust for true centering */
-   font-size: 1.5em;        /* Increase font size for better visibility, adjust as needed */
-}
+/*#scores {
+   color: rgb(12, 12, 11);             
+   position: absolute;     
+   bottom: 10px;            
+   left: 50%;               
+   transform: translateX(-50%); 
+   font-size: 1.5em;        
+}*/
 
 body {
-   margin: 0;
-   overflow: hidden; /* Hide overflow to ensure stars are only visible within the container */
+   background: url('Science.jpg'); 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+   width: 100%; 
+   height: 100vh;
+ 
+   overflow: hidden;
+   font-family: 'Bebas Neue', sans-serif;
+   /*text-shadow: 1px 0 currentColor, 0 1px currentColor, 1px 1px currentColor;*/
+
 }
 
-.starry-background {
+/* .starry-background {
    position: absolute;
    top: 0;
    left: 0;
    width: 100%;
    height: 100%;
    background-color: #000; /* Background color of space */
-   z-index: -1; /* Place behind other content */
-}
+   /* z-index: -1; Place behind other content */
+/* } */ 
 
 
 
@@ -70,7 +88,117 @@ body {
    position: absolute;
    width: 2px;
    height: 2px;
-   background-color: #fff; /* Star color */
-   border-radius: 50%; /* Create a round shape */
-   pointer-events: none; /* Ignore pointer events to allow interaction with content behind */
+   background-color: #fff; 
+   border-radius: 50%; 
+   pointer-events: none; 
+}
+
+
+#predictionScoreDisplay{
+   position: absolute;
+   top: 50px;
+   right: 50px;
+}
+
+
+
+#revealButton {
+   margin-top: 20px;
+   padding: 10px 15px;
+   background-color: #333;
+   color: #fff;
+   border: inset;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+#revealButton:hover {
+   background-color: #555;
+}
+
+#submitButton {
+   margin-top: 20px;
+   padding: 10px 15px;
+   background-color: #333;
+   color: #fff;
+   border: inset;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+#submitButton:hover {
+   background-color: #555;
+}
+
+#loadButton {
+   margin-top: 20px;
+   padding: 10px 15px;
+   background-color: #333;
+   color: #fff;
+   border: inset;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+#loadButton:hover {
+   background-color: #555;
+}
+
+#clearTableButton {
+   margin-top: 20px;
+   padding: 10px 15px;
+   background-color: #333;
+   color: #fff;
+   border: inset;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+#clearTableButton:hover {
+   background-color: #555;
+}
+
+#refreshButton {
+   margin-top: 20px;
+   padding: 10px 15px;
+   background-color: #333;
+   color: #fff;
+   border: inset;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+#refreshButton:hover {
+   background-color: #555;
+}
+
+/* Score Table Section*/
+
+#scoresSection {
+    margin-top: 50px;
+    border-top: 2px solid #ccc;
+    padding-top: 20px;
+    
+}
+
+#scoresTable {
+    width: 100%;
+    margin-top: auto;
+    border-collapse: collapse;
+    position: absolute;     
+    bottom: 10px;            
+    left: 50%;               
+    transform: translateX(-50%); 
+    font-size: 1.5em;  ;
+}
+
+#scoresTable th, #scoresTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    
+}
+
+#scoresTable th {
+    background-color: #f2f2f2;
 }
