@@ -17,6 +17,7 @@ from smart_open import open
 
 
 app = Flask(__name__)
+
 app.secret_key = 'monkey55@2023'
 
 #S3 API keys
@@ -74,7 +75,7 @@ def get_prediction_from_csv(df, filename, image_column="ImageFileName", value_co
 @app.route('/')
 def display_images():
     s3_bucket_name = 'p4dreambucket'
-
+    session.clear()
     ##This line is for reading directly from S3
     #object_list = list_objects_in_bucket(s3_bucket_name)
 
@@ -218,6 +219,13 @@ def submit_choices():
 
 
 
+@app.route('/clear_session', methods=['POST'])
+def clear_session():
+    session.clear()
+
+    global scores
+    scores = []
+    return jsonify({'status': 'data cleared'})
 
 
 

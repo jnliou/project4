@@ -135,7 +135,24 @@ clearTableButton.addEventListener('click', function() {
     // Clear the table content. This will remove all rows except the headers
     scoresTable.getElementsByTagName('tbody')[0].innerHTML = '';
 
-    // Optional: Display a message to the user
+    
     alert('Table cleared successfully!');
 });
 
+
+
+document.getElementById('clearSessionButton').addEventListener('click', function() {
+    fetch('/clear_session', {
+        method: 'POST'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.status === 'session cleared') {
+            alert('Session cleared successfully');
+            
+            location.reload();
+        } else {
+            alert('Session cleared successfully');
+        }
+    });
+});
