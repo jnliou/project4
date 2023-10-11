@@ -29,9 +29,9 @@ s3 = boto3.client('s3',
 #model_key = 'model_keras.h5'
 bucket_name = 'p4dreambucket'
 #Path for S3 bucket
-path = 'imagefile/Combine_test/'
+path = 'imagefile/Raw_Folder/'
 #Path for locale datas
-csv_path = 'Data/combined_test.csv'
+csv_path = 'Data/combined_test_New.csv'
 
 
 def load_csv_to_dataframe(csv_path):
