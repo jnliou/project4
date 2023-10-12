@@ -156,3 +156,5 @@ document.getElementById('clearSessionButton').addEventListener('click', function
         }
     });
 });
+
+

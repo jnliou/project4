@@ -65,8 +65,7 @@ def get_prediction_from_csv(df, filename, image_column="ImageFileName", value_co
 
 
 
-model_prediction_counts = []
-user_prediction_counts = []
+
 
 
 
@@ -120,8 +119,6 @@ def display_images():
     # Generate pre-signed URLs for the selected objects
     image_urls = generate_presigned_urls(s3_bucket_name, selected_image_names,path)
     zipped_data = zip_function(image_urls, model_answer,answer)
-
-    
     
     return render_template('image.html',zipped_data = zipped_data, correct_count_prediction=correct_count_prediction, correct_count_user=None,scores=scores)
 
