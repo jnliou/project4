@@ -20,7 +20,7 @@ app = Flask(__name__)
 
 app.secret_key = 'monkey55@2023'
 
-#S3 API keys
+# #S3 API keys
 s3 = boto3.client('s3',
                   aws_access_key_id= key_id,
                   aws_secret_access_key= key)
