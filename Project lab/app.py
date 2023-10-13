@@ -95,7 +95,7 @@ def display_images():
     target_list_csv = [int(item) for item in target_list_csv]
     session['target_list_csv'] = target_list_csv
     
-    #session['target_list_csv'] = target_list_csv
+   
     #Here will be code to extract predicted value from csv
     prediction_list_csv = []  
     for image_filename in selected_image_names:
@@ -128,7 +128,7 @@ def display_images():
 
 
 def zip_function(x,y,z):
-    # ... other code ...
+    
 
     # Zip your lists
     zipped_data = zip(x, y, z)
@@ -173,17 +173,6 @@ def filter_prediction(list):
     return  filtered_prediction
 
 
-#This is the fuction if i want to extract images directly from S3  
-# def list_objects_in_bucket(bucket_name):
-#     try:
-#         # List all objects in the S3 bucket
-#         response = s3.list_objects_v2(Bucket=bucket_name, Prefix='imagefile/Combine/')
-#         object_list = [obj['Key'] for obj in response.get('Contents', [])]
-#         print(f'Object list contains:{object_list}')
-#         return object_list
-#     except Exception as e:
-#         print(f"Error listing objects in S3 bucket: {str(e)}")
-#         return []
 
 def generate_presigned_urls(bucket_name, object_keys,path):
     try:

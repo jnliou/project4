@@ -16,7 +16,7 @@
 
     <!--Link to my CSS files-->
     <link rel="stylesheet" type="text/css" href="static/styles.css">
-    <h1 class="title">ML Model Mini Game</h1>
+    <h1 class="title">MalariAI: The Malaria Detection Challenge</h1>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 
         <!--All the buttons-->
 
-        <button id="openModalBtn" class="btn btn-primary buttons">Instruction
+        <button id="openModalBtn" class="btn btn-primary buttons">Instructions
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-cloud-download" viewBox="0 0 16 16">
                 <path
@@ -35,7 +35,7 @@
         </button>
 
 
-        <button id="refreshButton" class="btn btn-secondary buttons">Restart
+        <button id="refreshButton" class="btn btn-secondary buttons">Continue
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-arrow-return-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -44,7 +44,7 @@
         </button>
 
 
-        <button id="clearTableButton" class="btn btn-danger buttons">Clear Table
+        <button id="clearTableButton" class="btn btn-danger buttons" style="display: none;">Clear Table
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3"
                 viewBox="0 0 16 16">
                 <path
@@ -53,7 +53,7 @@
         </button>
 
 
-        <button id="clearSessionButton" class="btn btn-warning buttons">Clear Session
+        <button id="clearSessionButton" class="btn btn-info buttons">New Game
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill"
                 viewBox="0 0 16 16">
                 <path
@@ -72,12 +72,22 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Welcome to the Machine Learning Mini Game, purpose of this game is to help people identify infected malaria cells.
-            Click on the cell images that you think have malaria, and click submit.
-            It will tell you if the answers are right or wrong.
-            Your input will be compared to our Machine Learning model, with scores and accuracy measures.
-
-            </p>
+            <h1>Welcome to the Malaria Cell Identification Challenge!</h1>
+            <p>The goal of this game is to assist individuals, especially medical and science students, in identifying malaria-infected cells.</p>
+            <h2>How It Works:</h2>
+            <ol>
+                <li>Click on the cell images that you believe show signs of malaria.</li>
+                <li>Click <button style="background-color: #007bff; color: #000;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-capsule"viewBox="0 0 16 16">
+                        <path d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429l4.243 4.242Z" />
+                    </svg>'Submit'</button> to check if your answers are correct or not, and see what our Machine Learning model predicted.
+                </li>
+                <li>You can click <button style="background-color: #6c757d ; color: #ffffff;">'Continue'</button> to load a new set of images, allowing you to refine your identification skills.</li>
+                <li>Your performance will be compared to our Machine Learning model, and scores and accuracy measures will be displayed as pie charts.</li>
+                <li>If you want to restart the game, please press<button style="background-color: #17a2b8; color: #fff;">'new game'.</button></li>
+            </ol>
+            <h3>Use this game as a fun and educational way to improve your ability to identify malaria-infected cell images.</h3>
+            <h3>Let's all stay healthy and protect ourselves from malaria!</h3>
         </div>
     </div>
         <!--Images Goes Here-->
@@ -125,7 +135,7 @@
 
         <!--Below are the scores table-->
         <div id="predictionScoreDisplay">
-            <p>Our Model Prediction got: {{ correct_count_prediction }} Correct</p>
+            <p>Our Model Prediction got: <strong>{{ correct_count_prediction }}</strong> Correct</p>
         </div>
 
 

@@ -1,5 +1,3 @@
-// refresh.js
-
 
 let myPieChart; // global variable
 
@@ -13,15 +11,7 @@ refreshButton.addEventListener('click', function () {
 });
 
 
-
-var loadButton = document.getElementById('loadButton');
 var imageContainer = document.getElementById('image-container');
-
-// Add a click event listener to the button
-// loadButton.addEventListener('click', function () {
-//    // Show the image container
-//    imageContainer.style.display='flex';
-// });
 
 
 //Add data clicking
@@ -30,7 +20,7 @@ function toggleChoice(imageElement, inputId) {
     
     // Toggle the image's appearance
     if (inputElement.value == '0') {
-        imageElement.style.border = "3px solid red";  // Visually mark the image
+        imageElement.style.border = "6px solid #007bff";  // Visually mark the image
         inputElement.value = '1';
     } else {
         imageElement.style.border = "none";  // Reset visual marking
@@ -80,61 +70,6 @@ function submitChoices() {
 }
 
 
-    
-// function updatePieChart(userTotal, modelTotal) {
-//     var ctx = document.getElementById('myPieChart').getContext('2d');
-    
-//     // Check if there's an existing chart instance and destroy it to avoid the 'canvas already in use' error
-//     if (myPieChartInstance) {
-//         myPieChartInstance.destroy();
-//     }
-
-//     myPieChartInstance = new Chart(ctx, {
-//         type: 'pie',
-//         data: {
-//             labels: ['User', 'Model'],
-//             datasets: [{
-//                 data: [userTotal, modelTotal],
-//                 backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)']
-//             }]
-//         }
-//     });
-// }
-
-
-
-
-
-function updateScores(scores) {
-   let scoresDiv = document.getElementById('scores');
-   scoresDiv.innerHTML = "Scores: " + scores.join(", ");
-}
-
-
-
-function revealAnswers() {
-    let answers = document.querySelectorAll(".actual-answer");
-    answers.forEach(answer => {
-        answer.style.display = "block";
-    });
-    //you can hide the "Reveal" button after clicking
-    document.getElementById("revealButton").style.display = "none";
-}
-
-
-let clearTableButton = document.getElementById('clearTableButton');
-clearTableButton.addEventListener('click', function() {
-    // Get the table element
-    let scoresTable = document.getElementById('scoresTable');
-    
-    // Clear the table content. This will remove all rows except the headers
-    scoresTable.getElementsByTagName('tbody')[0].innerHTML = '';
-
-    
-    alert('Table cleared successfully!');
-});
-
-
 
 document.getElementById('clearSessionButton').addEventListener('click', function() {
     fetch('/clear_session', {
@@ -156,15 +91,23 @@ function createPieChart(userTotal, modelTotal) {
     let data = [{
         values: [userTotal, modelTotal],
         labels: ['User', 'Model'],
-        type: 'pie'
+        type: 'pie',
+        marker: {
+            colors: [' #DD1DAE', 'pink'],
+            line: {
+                color: 'black',
+                width: 2
+            }
+        }
     }];
 
     let layout = {
         title: 'User vs Model Scores',
         height: 400,
         width: 500,
+        paper_bgcolor: 'rgba(0,123,255,0.8)',
         font: {
-            family: 'Courier New, monospace',
+            family: 'Bebas Neue, sans-serif',
             size: 20,
             color: '#000'
         },
@@ -180,6 +123,7 @@ function createPieChart2(userTotal, counts) {
         labels: ['Correct', 'Wrong'],
         type: 'pie',
         marker: {
+            colors: [' #DD1DAE', 'pink'],
             line: {
                 color: 'black',
                 width: 2
@@ -191,9 +135,9 @@ function createPieChart2(userTotal, counts) {
         title: 'User Accuracy',        
         height: 400,
         width: 500,
-        paper_bgcolor: 'rgba(7,44,7,0.8)',
+        paper_bgcolor: 'rgba(0,123,255,0.8)',
         font: {
-            family: 'Courier New, monospace',
+            family: 'Bebas Neue, sans-serif',
             size: 20,
             color: '#000',            
         },
@@ -207,16 +151,23 @@ function createPieChart3(modelTotal, counts) {
     let data = [{
         values: [modelTotal,counts],
         labels: ['Correct', 'Wrong'],
-        type: 'pie'
+        type: 'pie',
+        marker: {
+            colors: [' #DD1DAE', 'pink'],
+            line: {
+                color: 'black',
+                width: 2
+            }
+        }
     }];
 
     let layout = {
         title: 'Model Accuracy',
         height: 400,
         width: 500,
-        paper_bgcolor: 'lightgray',
+        paper_bgcolor: 'rgba(0,123,255,0.8)',
         font: {
-            family: 'Courier New, monospace',
+            family: 'Bebas Neue, sans-serif',
             size: 20,
             color: '#000'
         },
