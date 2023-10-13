@@ -12,7 +12,7 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 ## Programs Utilized:
 
 ### Backend 
-* Python: pil, os, CV2
+* Python: PIL, os, CV2, boto3, Image, Tensorflow, Matplotlib, Sklearn
 * Flask
 * SQLite
 
