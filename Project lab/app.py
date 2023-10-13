@@ -121,7 +121,7 @@ def display_images():
     image_urls = generate_presigned_urls(s3_bucket_name, selected_image_names,path)
     zipped_data = zip_function(image_urls, model_answer,answer)
 
-    
+    print(f'The scores are {scores}')
     
     return render_template('image.html',zipped_data = zipped_data, correct_count_prediction=correct_count_prediction, correct_count_user=None,scores=scores)
 
@@ -201,8 +201,10 @@ def generate_presigned_urls(bucket_name, object_keys,path):
 
 #To store the scores
 scores = []
+counts=0
 @app.route('/submit_choices', methods=['POST'])
 def submit_choices():
+    
     user_choices = request.json['choices']
     correct_categories = session.get('target_list_csv', [])
     correct_count_prediction = session.get('correct_count_prediction', 0)
@@ -218,7 +220,33 @@ def submit_choices():
                 })  # Add the score to the scores list
     print(f'Score Board : {scores}')
     
-    return jsonify({'correct_count_user': correct_count_user,'correct_count_prediction': correct_count_prediction , 'scores': scores})
+    global counts
+     
+    counts = counts + 5
+    userTotal, modelTotal, userPercent,modelPercent = get_total_scores()
+    print(f'The Totals are:{userTotal} and {modelTotal}')
+    print(f'The counts are:{counts}')
+    
+    return jsonify({'correct_count_user': correct_count_user,'correct_count_prediction': correct_count_prediction , 'scores': scores,'userTotal': userTotal,'modelTotal': modelTotal, 'counts':counts,'userPercent':userPercent,'modelPercent':modelPercent})
+
+
+
+def get_total_scores():
+    global counts
+    userTotal = sum([score['User'] for score in scores])
+    modelTotal = sum([score['Model'] for score in scores])
+    userPercent = userTotal/counts
+    modelPercent = modelTotal/counts
+    
+
+    return (userTotal, modelTotal,userPercent,modelPercent)
+
+
+
+
+
+
+
 
 
 
