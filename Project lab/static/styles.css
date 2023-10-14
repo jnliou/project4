@@ -168,6 +168,16 @@ body {
    100% { color: red; }
 }
 
+@keyframes burningEffect {
+   0%   { opacity: 1; text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff6600, 0 0 20px #ff6600, 0 0 25px #ffaa00, 0 0 30px #ffaa00, 0 0 35px #ffaa00;}
+   100% { opacity: 0.8; text-shadow: none; }
+}
+
+#burning {
+   animation: burningEffect 1s alternate infinite;
+}
+
+
 
 a{
    color: #01060a; 

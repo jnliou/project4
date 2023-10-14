@@ -1,4 +1,5 @@
 
+
 let myPieChart; // global variable
 
 // Get a reference to the button element by its id
@@ -61,7 +62,7 @@ function submitChoices() {
         alert("You got: " + data.correct_count_user + " Correct!!" );  
 
         
-
+        applyHeat(data.userTotal, data.modelTotal);
         createPieChart(data.userTotal, data.modelTotal);
         createPieChart2(data.userTotal, data.counts-data.userTotal);
         createPieChart3(data.modelTotal, data.counts-data.modelTotal);
@@ -203,5 +204,20 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+}
+
+
+
+function applyHeat(userTotal, modelTotal) {
+    if (userTotal > modelTotal) {
+        Swal.fire('Congratulations!', 'You outscored the model!', 'success');
+
+        var element = document.querySelector('.title');
+        if (element) {
+            
+            element.id = 'burning';
+        }
+    }
+   
 }
 
