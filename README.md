@@ -100,12 +100,19 @@ We used two methods to perform PCA on our image dataset.
     - RGB Channel Distribution
     - Max/Mean Blob 
     - Edge Density of the image
+ 
+![image](https://github.com/jnliou/project4/assets/131678606/7ff39e06-b82b-4ad6-9d49-fb3d832814f1)
+![image](https://github.com/jnliou/project4/assets/131678606/8aac7a58-e539-42db-ab75-8a40d93f89b1)
+![image](https://github.com/jnliou/project4/assets/131678606/b81c6f47-2625-448e-a49d-017f564675ec)
+
 
 - Approach2: We performed PCA on our raw image dataset by following the steps below to see if there is a split between class labels.
     - Read images
     - Flatten images
     - Process in PCA
     - Plot on 2d map, color by class label
+![image](https://github.com/jnliou/project4/assets/131678606/c532a95e-964c-4f09-a0ce-d4496986d727)
+![image](https://github.com/jnliou/project4/assets/131678606/3ee47546-9b9a-40db-b6db-4e4e44f9b81e)
 
 ### Data Integration and Export
 
@@ -147,7 +154,8 @@ This is a pre-trained model on the popular image dataset called `imagenet`.
 
 The graphs below depict that the data was overfitting at certain points.
 
-
+![image](https://github.com/jnliou/project4/assets/131678606/8011ae48-a516-4752-b0aa-6727f4fb267f)
+![image](https://github.com/jnliou/project4/assets/131678606/eaa75a2e-0443-441d-8f7e-2cd2ae798ccf)
 
 ## FLASK 
 
