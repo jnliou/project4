@@ -12,14 +12,23 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 ## Programs Utilized:
 
 ### Backend 
-* Python: pil, os, CV2
+* Python: Matplotlib, Numpy, Pandas, Scripy.stats, Sklearn, Tensorflow, PIL, OS, CV2, boto3, Keras, Shutil, IO 
 * Flask
 * SQLite
+* S3.Bucket
+* CSV Files
 
 ### Frontend
+* HTML/CSS: Jinga2, Bootstrap
+* Javascript: Plotly
+* Sweetalert2
  
 ### Other
 * GitHub
+* Tableau
+* Canva
+* Miro
+* Trello
 
 ## Dataset used:
 * [Kaggle Dataset on Malaria](https://www.kaggle.com/datasets/iarunava/cell-images-for-detecting-malaria) 
