@@ -200,5 +200,8 @@ Pluggin used includes plotly, bootstrap and google fonts.
 ### User Interaction: 
 * Users can select infected cells on the platform. Once they submit their selections, the data is sent to our backend for processing.
 **By seamlessly integrating these tools, we've been able to craft a dynamic and interactive platform for our users.**
+
+  ![image](https://github.com/jnliou/project4/assets/15763802/fd8222cc-c4b3-4d18-b4f9-e9f6c61ef421)
+
 ##### Presentation
 
