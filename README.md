@@ -159,12 +159,13 @@ Normalization: Pixel values were scaled to a range of [0, 1] by dividing by the 
 
 ### Model Architecture
 The CNN model architecture used for cell image classification is as follows 
+<img width="495" alt="Screenshot 2023-10-12 at 13 39 19" src="https://github.com/jnliou/project4/assets/132161799/a64256dc-89f4-4d69-9435-8d9ed59c6ac5">
 
 Input Layer: Accepts images with dimensions (32, 25, 25, 3)
 
 Convolutional Layers: Three convolutional layers were employed with varying numbers of filters and filter sizes:
 
-Convolutional Layer 1: 16 filters of size 3x3
+Convolutional Layer 1: 16 filters of size 3x3 with regularizer of 0.05 (to prevent overfitting)
 Convolutional Layer 2: 32 filters of size 3x3
 Convolutional Layer 3: 16 filters of size 3x3
 Max-Pooling Layers: Max-pooling layers followed each convolutional layer to reduce spatial dimensions:
