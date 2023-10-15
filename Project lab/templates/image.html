@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!--Plotly-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+    <!--Google Fonts Goes Here-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Include the SweetAlert2 CSS files -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    
+    <!--Link to my CSS files-->
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <h1 class="title">MalariAI: The Malaria Detection Challenge</h1>
+
+    
+</head>
+
+<body>
+    <div id="game">
+
+        <!--All the buttons-->
+
+        <button id="openModalBtn" class="btn btn-primary buttons">Instructions
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-cloud-download" viewBox="0 0 16 16">
+                <path
+                    d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z" />
+                <path
+                    d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z" />
+            </svg>
+        </button>
+
+
+        <button id="refreshButton" class="btn btn-secondary buttons">Continue
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z" />
+            </svg>
+        </button>
+
+
+        <button id="clearTableButton" class="btn btn-danger buttons" style="display: none;">Clear Table
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3"
+                viewBox="0 0 16 16">
+                <path
+                    d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
+            </svg>
+        </button>
+
+
+        <button id="clearSessionButton" class="btn btn-info buttons">New Game
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+            </svg>
+        </button>
+
+        <a href="https://github.com/jnliou/project4" target="_blank">GitHub
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-github"
+                viewBox="0 0 16 16">
+                <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+        </a>
+                <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>Welcome to the Malaria Cell Identification Challenge!</h1>
+            <p>The goal of this game is to assist individuals, especially medical and science students, in identifying malaria-infected cells.</p>
+            <h2>How It Works:</h2>
+            <ol>
+                <li>Click on the cell images that you believe show signs of malaria.</li>
+                <li>Click <button style="background-color: #007bff; color: #000;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-capsule"viewBox="0 0 16 16">
+                        <path d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429l4.243 4.242Z" />
+                    </svg>'Submit'</button> to check if your answers are correct or not, and see what our Machine Learning model predicted.
+                </li>
+                <li>You can click <button style="background-color: #6c757d ; color: #ffffff;">'Continue'</button> to load a new set of images, allowing you to refine your identification skills.</li>
+                <li>Your performance will be compared to our Machine Learning model, and scores and accuracy measures will be displayed as pie charts.</li>
+                <li>If you want to restart the game, please press<button style="background-color: #17a2b8; color: #fff;">'new game'.</button></li>
+            </ol>
+            <h3>Use this game as a fun and educational way to improve your ability to identify malaria-infected cell images.</h3>
+            <h3>Let's all stay healthy and protect ourselves from malaria! If you win...</h3>
+        </div>
+    </div>
+        <!--Images Goes Here-->
+        <div id="image-container">
+            {% for image_url, model_answer, answer in zipped_data %}
+            <div class="image-block">
+                <img class="s3-image" src="{{ image_url }}" alt="Image"
+                    onclick="toggleChoice(this, 'input-{{ loop.index }}');">
+                <input type="hidden" id="input-{{ loop.index }}" name="image-{{ loop.index }}" value="0">
+                <p class="filtered-item predict-answer" style="display:none;">Predicted: {{ model_answer }}</p>
+                <p class="filtered-item actual-answer" style="display:none;">Actual: {{ answer }}</p>
+            </div>
+            {% endfor %}
+            <!-- <button id="revealButton" onclick="revealAnswers()">Reveal Answers</button> --><!--Code if i want to add the reveal button -->
+
+
+
+            <button id="submitButton" class="btn btn-primary d-inline-flex align-items-center"
+                onclick="submitChoices()">Submit Choices
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-capsule"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429l4.243 4.242Z" />
+                </svg>
+            </button>
+        </div>
+
+        
+        <!--charts display here-->
+        <div id="pieChartContainer">
+            <div id="pie-chart"> </div>
+            <div id="pie-chart2"> </div>
+            <div id="pie-chart3"> </div>
+        </div>
+
+
+        <!-- Link to the JavaScript file -->
+        <script type='text/javascript' src="static/logic.js"></script>
+        <script src="static/stars.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <!-- SweetAlert2 JS-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    
+
+
+        <!--Below are the scores table-->
+        <div id="predictionScoreDisplay">
+            <p>Our Model Prediction got: <strong>{{ correct_count_prediction }}</strong> Correct</p>
+        </div>
+
+
+</body>
+
+</html>
