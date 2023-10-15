@@ -141,27 +141,60 @@ Data was exported to our website using a SQLite database which consisted of the 
 **Step 7: Building the Machine Learning**
 We tried a few different machine learning models to figure out the best accuracy for our end goal. 
 
-A) CNN:
+### Machine Learning Models:
 
-B) Random Forest:
+**A) CNN (Convolutional Neural Network):**
 
-c) SVC:
+The CNN model was designed for the classification of cell images into two categories: uninfected (0) and infected (1). It's aimed at assisting in the automated detection of infected cells, a task of significance in the detection of Malaria.
 
+- **Training Dataset:**
+  - Dataset Size: 1750 cell images.
+  - Features: Each row in the dataset represents an image, with each pixel of the image treated as a feature.
+  - Target Variable: The "Target" column indicates the class label, where 0 represents uninfected cells, and 1 represents infected cells.
 
-D) Ensemble:
+- **Data Preprocessing:**
+  - Image Resizing: All images were resized to a consistent size (not specified in the provided information) to ensure uniform input dimensions for the CNN.
+  - Normalization: Pixel values were scaled to a range of [0, 1] by dividing by the maximum pixel value (e.g., 255 for 8-bit images). This standardization helps improve convergence during training.
 
-E) Linear Regression:
+- **Model Architecture:**
+  - The CNN model architecture used for cell image classification is as follows:
+    - Input Layer: Accepts images with dimensions (32, 25, 25, 3)
+    - Convolutional Layers: Three convolutional layers were employed with varying numbers of filters and filter sizes.
+    - Max-Pooling Layers: Max-pooling layers followed each convolutional layer to reduce spatial dimensions.
+    - Flatten Layer: The output from the final max-pooling layer was flattened into a 1D vector of length 16.
+    - Dense Layers: Two dense (fully connected) layers were used.
+    - Dropout Layer: A dropout layer with a dropout rate of 0.5 was added after the first dense layer to prevent overfitting.
 
-F) Decision Tree:
+- **Model Training:**
+  - Loss Function: Binary cross-entropy.
+  - Optimizer: Adam
+  - Batch Size: 32
+  - Epochs: 50
+  - Validation Split: 20% of the training data was used for validation during training to monitor model performance.
 
-G) KNN:
+- **Model Evaluation:**
+  - The model's performance was evaluated using common binary classification metrics, including:
+    - Accuracy: Measures the overall correctness of predictions. For this model, the accuracy was 94%.
 
-D) Xception: 
-This is a pre-trained model on the popular image dataset called `imagenet`. 
-- We built our base model using the pre-trained model and then added a layer of our own testing and training dataset to see how it will perform. 
-- We got an accuracy of 79%, over 20 epochs.
-- It was interesting to notice that the only way to fine-tune this model was to introduce our original dataset into one of the layers.
-- Different Convo2D layers did not sit cohesively with the machine learning model.
+**B) Random Forest:**
+
+The EDA data was analyzed by a Random Forest model to predict if a cell was infected or not. The Random Forest model was tuned with hyperparameters, and the important features were identified.
+
+- **Testing Data:**
+  - The testing dataset of 750 images that were not seen by the model was used to test the dataset. The model was used to predict infected and uninfected cells.
+
+- **Results:**
+  - The Random forest with hyperparameter tuning gave an accuracy of 89%.
+
+**C) Ensemble:**
+
+Since the two models are determining whether the cells are infected or not, the predictions from these two models were pooled in a 60/40 ratio of CNN predictions and Random Forest predictions.
+
+**D) Xception:**
+
+This is a pre-trained model on the popular image dataset called `imagenet`. We built our base model using the pre-trained model and then added a layer of our own testing and training dataset to see how it will perform. We got an accuracy of 79% over 20 epochs.
+
+These machine learning models were used to classify cell images into infected and uninfected categories for the Malaria detection task.
 
 The graphs below depict that the data was overfitting at certain points.
 
