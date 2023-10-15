@@ -230,13 +230,8 @@ Since the two models are determining whether the cells are infected or not, the 
     - Total parameters: 22,960,681 (87.59 MB)
     - Trainable parameters: 2,099,201 (8.01 MB)
     - Non-trainable parameters: 20,861,480 (79.58 MB)
-
-
-The graphs below depict that the data was overfitting at certain points but the validation set performed better than the training data consistently. 
-
-![Alt text](image.png)
-![Alt text](image-1.png)
-
+    - The graphs in `xception.ipynb` depict that the data was overfitting at certain points but the validation set performed better than the training data consistently. 
+    
 
 ## FLASK
 ### Key Libraries Used:
