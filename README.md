@@ -217,9 +217,6 @@ Validation Loss (Orange Line): Represents the loss for the validation dataset. L
 
 The CNN model is showing that it is predicting at 94% accuracy.
 
-### Testing Data
-The testing dataset of 750 images that were not seen by the model was used to test the dataset. The model was used to predict infected and uninfected cells. 
-
 B) Random Forest:
 
 The EDA data was analyzed by Random Forest model to predict if a cell was infected or not. The Random Forest model was tuned with hyper parameter with the help of monitoring which features are important in detecting the cells are infected or uninfected. The graph below shows that the important features are 'Red_Channel_Distribution', 'Green_Channel_Distribution', 'Blue_Channel_Distribution' and 'Edge_Density'. 'MeanBlobSize' and 'MaxBlobSize' are not as significant as the other features in respect to detection of infected and uninfected cells.
@@ -227,14 +224,32 @@ The EDA data was analyzed by Random Forest model to predict if a cell was infect
 ![feature importance](https://github.com/jnliou/project4/assets/132161799/5dc670a1-1f60-4c00-af07-76324c2c6119)
 
 The Random forest with hyperparameter tuning of 0.1 gives us an accuracy of 89%.
+
 <img width="454" alt="RF Model " src="https://github.com/jnliou/project4/assets/132161799/b2b3a6b5-a906-496e-874a-cc62c30743fa">
 
-The Model was then used to predict infected or uninfected cells. 
+Class 0: Uninfected Cells
 
+Precision: 0.88, meaning that 88% of instances predicted as class 0 were actually class 0.
+Recall: 0.90, indicating that the model identified 90% of actual class 0 instances.
+F1-Score: 0.89, which is the harmonic mean of precision and recall, providing a single metric that balances the two.
+Support: 750, signifying that there are 750 instances of class 0 in the dataset.
+
+Class 1: Infected Cells 
+
+Precision: 0.90, meaning that 90% of instances predicted as class 1 were truly class 1.
+Recall: 0.88, indicating the model identified 88% of actual class 1 instances.
+F1-Score: 0.89.
+Support: 750, indicating there are 750 instances of class 1 in the dataset.
+Overall Metrics:
+
+Accuracy: 0.89, indicating that the model correctly predicted 89% of the instances regardless of the class.
 
 ### Combination of two models
 
 Since the two models are determining whether the cells are infected or not. The predictions from these two models were pooled in ratio 0.6 of CNN predictions and 0.4 of Random Forest predictions, in favouring the more accurate model.
+
+### Testing Data
+The testing dataset of 750 images that were not seen by the model was used to test the dataset. The model was used to predict infected and uninfected cells. 
 
 The end result is that the model predicts:
 Uninfected cell at 96%
