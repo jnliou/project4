@@ -92,6 +92,28 @@ Edge density comparison between uninfected and infected cells was conducted. His
 
 The average RGB color distribution of each image for infected and uninfected cells was compared. Histograms and T-tests were used to evaluate any statistical distinctions in average RGB color distribution.
 
+## Principal Component Analysis
+
+We used two methods to perform PCA on our image dataset. 
+
+- Approach1: Performing PCA over Image Characteristics and Features as mentioned below. Results are displayed as below. 
+    - RGB Channel Distribution
+    - Max/Mean Blob 
+    - Edge Density of the image
+ 
+![image](https://github.com/jnliou/project4/assets/131678606/7ff39e06-b82b-4ad6-9d49-fb3d832814f1)
+![image](https://github.com/jnliou/project4/assets/131678606/8aac7a58-e539-42db-ab75-8a40d93f89b1)
+![image](https://github.com/jnliou/project4/assets/131678606/b81c6f47-2625-448e-a49d-017f564675ec)
+
+
+- Approach2: We performed PCA on our raw image dataset by following the steps below to see if there is a split between class labels.
+    - Read images
+    - Flatten images
+    - Process in PCA
+    - Plot on 2d map, color by class label
+![image](https://github.com/jnliou/project4/assets/131678606/c532a95e-964c-4f09-a0ce-d4496986d727)
+![image](https://github.com/jnliou/project4/assets/131678606/3ee47546-9b9a-40db-b6db-4e4e44f9b81e)
+
 ### Data Integration and Export
 
 The results of the various analyses were integrated into 4 DataFrames. 2 for the training data: ```Dataset/eda_train_infect.csv```, ```Dataset/eda_train_uninfect.csv```, and two for the testing data: ```Dataset/eda_test_infect.csv```, ```Dataset/eda_test_uninfect.csv``` for further analysis and reference.
@@ -104,8 +126,39 @@ WRITE HERE
 Once we had consistent structures of data, we integrated it into a single DataFrame using SQLite.
 
 **Step 6: Data Export**
+Data was exported to our website using a sqlite database which consisted of the predictions from our ML model, while our raw data (image dataset) was hosted on S3 bucket. 
 
-## Data Science
+**Step 7: Building the Machine Learning**
+We tried a few different machine learning models to figure out the best accuracy for our end goal. 
+
+A) CNN:
+
+B) Random Forest:
+
+c) SVC:
+
+
+D) Ensemble:
+
+E) Linear Regression:
+
+F) Decision Tree:
+
+G) KNN:
+
+D) Xception: 
+This is a pre-trained model on the popular image dataset called `imagenet`. 
+- We built our base model using the pre-trained model and then added a layer of our own testing and training dataset to see how it will perform. 
+- We got an accuracy of 79%, over 20 epochs.
+- It was interesting to notice that the only way to fine-tune this model was to introduce our original dataset into one of the layers.
+- Different Convo2D layers did not sit cohesively with the machine learning model.
+
+The graphs below depict that the data was overfitting at certain points.
+
+![image](https://github.com/jnliou/project4/assets/131678606/8011ae48-a516-4752-b0aa-6727f4fb267f)
+![image](https://github.com/jnliou/project4/assets/131678606/eaa75a2e-0443-441d-8f7e-2cd2ae798ccf)
+
+
 ## FLASK
 ### Key Libraries Used:
 
@@ -149,7 +202,10 @@ Pluggin used includes plotly, bootstrap and google fonts.
 ### User Interaction: 
 * Users can select infected cells on the platform. Once they submit their selections, the data is sent to our backend for processing.
 **By seamlessly integrating these tools, we've been able to craft a dynamic and interactive platform for our users.**
-![image](https://github.com/jnliou/project4/assets/15763802/b08ef0c8-ecfe-4870-af54-d5661b112918)
+ 
+
+  ![image](https://github.com/jnliou/project4/assets/15763802/fd8222cc-c4b3-4d18-b4f9-e9f6c61ef421)
+
 
 ##### Presentation
 
