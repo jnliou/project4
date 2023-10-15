@@ -157,19 +157,48 @@ The graphs below depict that the data was overfitting at certain points.
 ![image](https://github.com/jnliou/project4/assets/131678606/8011ae48-a516-4752-b0aa-6727f4fb267f)
 ![image](https://github.com/jnliou/project4/assets/131678606/eaa75a2e-0443-441d-8f7e-2cd2ae798ccf)
 
-## FLASK 
+## FLASK
+### Key Libraries Used:
 
-We utilized SQLAlchemy and Flask to create API routes in JSON format for 
+| Type | Library|
+|-----:|---------------|
+| Data Handling & Processing|   Numpy, Pandas |
+| Web Framework |  Flask  |
+| Storage & AWS Interaction|  Boto3   |
+|  File Handling & Compression|  Zipfile, IO   |
+| Randomization| Random  |
+|  Database & ORM| SQLAlchemy, csv  |
+
+### Backend Processes & AWS Integration:
+* To interact with our AWS storage, we generated pre-signed URLs from our S3 bucket name and key. This provides an API for Flask to retrieve image files.
+ * The essential aws_access_key is fetched from our config file, ensuring its security by not sharing it on GitHub.
+### User Interaction & Data Handling:
+* Flask plays a pivotal role in capturing user input data from our web game, which is temporarily stored in a global variable.
+* After processing this data through our game logic, Jinja2 templating assists in parsing the variables to the frontend, making it accessible for various functions.
+### API Creation:
+* With the combination of SQLAlchemy and Flask, we've set up API routes that output data in JSON format.
+  
+**These intricacies, woven together, create a robust and interactive platform tailored to our users' needs.**
 
 * Codes found here for helping to run Flask: [helper.py](helper.py)
 * To run Flask: [app.py](app.py)
 * SQLite Database: [WRITEHERE.db](project3.db)
 * Queries on SQLite to create tables: [SQLite-query](sqlite-query)
 
-## Data Science
-
 ## Front End Development for User Integration
+Pluggin used includes plotly, bootstrap and google fonts.
 
-
+### Front-end: 
+* HTML and CSS have been employed to design the visuals and effects. For user interactions, including an engaging game to showcase our machine learning model, we've used JavaScript.
+### Visualization: 
+* Plotly was instrumental in creating graphical representations like pie charts.
+### Styling & Fonts: 
+* Bootstrap and Google Fonts enhanced the website's aesthetics and readability.
+### Backend & Storage:
+* With Flask serving as our backend framework, we're efficiently reading data from our database.
+* AWS S3 has been our choice for storage. It allows us to select image names from the database and subsequently extract and display the relevant image files on the website.
+### User Interaction: 
+* Users can select infected cells on the platform. Once they submit their selections, the data is sent to our backend for processing.
+**By seamlessly integrating these tools, we've been able to craft a dynamic and interactive platform for our users.**
 ##### Presentation
 
