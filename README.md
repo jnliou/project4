@@ -12,7 +12,7 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 ## Programs Utilized:
 
 ### Backend 
-* Python: Matplotlib, Numpy, Pandas, Scripy.stats, Sklearn, Tensorflow, PIL, OS, CV2, boto3, Keras, Shutil, IO 
+* Python: Matplotlib, Numpy, Pandas, Scipy.stats, Sklearn, Tensorflow, PIL, OS, CV2, boto3, Keras, Shutil, IO, Random 
 * Flask
 * SQLite
 * S3.Bucket
@@ -34,12 +34,12 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 * [Kaggle Dataset on Malaria](https://www.kaggle.com/datasets/iarunava/cell-images-for-detecting-malaria) 
 * [Originally from National Library of Medicine](https://lhncbc.nlm.nih.gov/LHC-downloads/downloads.html#malaria-datasets)
 
-## To run the app:
+## To run the web app:
 
 * Git clone- https://github.com/jnliou/project4.git 
 * cd into directory- project4 
-* Start Flask app with [app.py](app.py)
-* Run [index.html](index.html) to view the dashboard in a browser
+* Start Flask app with [app.py](app.py) by writing python app.py in terminal. 
+* This will be able to run the web app. 
 
 ![Data Pipeline](<Dataset/Project Timeline Builder - Frame 1.jpg>)
 
@@ -73,6 +73,7 @@ From ![Unprocessed image](<Dataset/EDA/infected cells-unprocess.png>) to ![proce
 ![EDA Header](<Dataset/EDA/EDA header.png>)
 
 Tableau Dashboard of Exploratory Data Analysis: https://public.tableau.com/app/profile/julia.liou6123/viz/EDAonCellImagesofMalaria-Tableau/RGB 
+* [Jupyter Notebook Code for EDA](<EDA.ipynb>) 
 
 ### Cell Image Analysis
 
@@ -135,7 +136,7 @@ WRITE HERE
 Once we had consistent structures of data, we integrated it into a single DataFrame using SQLite.
 
 **Step 6: Data Export**
-Data was exported to our website using a sqlite database which consisted of the predictions from our ML model, while our raw data (image dataset) was hosted on S3 bucket. 
+Data was exported to our website using a SQLite database which consisted of the predictions from our ML model, while our raw data (image dataset) was hosted on S3 bucket. 
 
 **Step 7: Building the Machine Learning**
 We tried a few different machine learning models to figure out the best accuracy for our end goal. 
