@@ -143,6 +143,10 @@ We tried a few different machine learning models to figure out the best accuracy
 
 ### Machine Learning Models:
 
+Certainly, here's the specific part from the first README that discusses the machine learning section:
+
+### Machine Learning Models:
+
 **A) CNN (Convolutional Neural Network):**
 
 The CNN model was designed for the classification of cell images into two categories: uninfected (0) and infected (1). It's aimed at assisting in the automated detection of infected cells, a task of significance in the detection of Malaria.
