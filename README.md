@@ -158,9 +158,9 @@ Image Resizing: All images were resized to a consistent size (not specified in t
 Normalization: Pixel values were scaled to a range of [0, 1] by dividing by the maximum pixel value (e.g., 255 for 8-bit images). This standardization helps improve convergence during training.
 
 ### Model Architecture
-The CNN model architecture used for cell image classification is as follows (as per the initial description):
+The CNN model architecture used for cell image classification is as follows 
 
-Input Layer: Accepts images with dimensions (None, 25, 25, 1), where the last dimension (1) represents grayscale images.
+Input Layer: Accepts images with dimensions (32, 25, 25, 3)
 
 Convolutional Layers: Three convolutional layers were employed with varying numbers of filters and filter sizes:
 
@@ -193,8 +193,28 @@ Validation Split: 20% of the training data was used for validation during traini
 
 The model's performance was evaluated using common binary classification metrics, including:
 
-Accuracy: Measures the overall correctness of predictions. For this model, the accuracy was 94%-96%.
+Accuracy: Measures the overall correctness of predictions. For this model, the accuracy was 94%.
+![ML_learning graphs](https://github.com/jnliou/project4/assets/132161799/656b3b7f-701c-4339-bafd-31fb4327d617)
 
+The graphs provided depict the progression of training and validation metrics for a machine learning model across a series of epochs.
+
+### Training and Validation Accuracy (Left Graph)
+
+X-Axis (Epoch): Represents the number of times the entire dataset has been passed through the model. It ranges from 0 to 50.
+Y-Axis (Accuracy): Represents the accuracy of the model. It ranges from 0.70 to 0.95.
+Train Accuracy (Blue Line): Shows the accuracy of the model on the training dataset. It starts below 0.75 and increases steadily, reaching a plateau near 0.95 towards the later epochs.
+Validation Accuracy (Orange Line): Represents the model's accuracy on a separate, unseen dataset (validation dataset). It starts below 0.75 and increases over time, though it appears to be slightly more volatile than the training accuracy, especially towards the end.
+
+### Training and Validation Loss (Right Graph)
+
+X-Axis (Epoch): Again represents the number of times the dataset has been passed through the model, ranging from 0 to 50.
+Y-Axis (Loss): Represents the loss value, which is a measure of the error for the model's predictions. The value ranges from around 0.2 to 1.2 in this graph.
+Train Loss (Blue Line): Depicts the model's loss on the training dataset. It starts high, close to 1.2, and drops rapidly, leveling off around 0.2 in the later epochs.
+Validation Loss (Orange Line): Represents the loss for the validation dataset. Like the training loss, it starts high and drops, but it tends to be slightly more volatile, especially in the later epochs.
+
+<img width="949" alt="CNN Accuracy" src="https://github.com/jnliou/project4/assets/132161799/9e853c83-aa79-456f-b07a-c2222dff81e6">
+
+The CNN model is showing that it is predicting at 94% accuracy.
 
 ### Testing Data
 The testing dataset of 750 images that were not seen by the model was used to test the dataset. The model was used to predict infected and uninfected cells. 
@@ -203,10 +223,10 @@ B) Random Forest:
 
 The EDA data was analyzed by Random Forest model to predict if a cell was infected or not. The Random Forest model was tuned with hyper parameter with the help of monitoring which features are important in detecting the cells are infected or uninfected. The graph below shows that the important features are 'Red_Channel_Distribution', 'Green_Channel_Distribution', 'Blue_Channel_Distribution' and 'Edge_Density'. 'MeanBlobSize' and 'MaxBlobSize' are not as significant as the other features in respect to detection of infected and uninfected cells.
 
-
-
+![feature importance](https://github.com/jnliou/project4/assets/132161799/5dc670a1-1f60-4c00-af07-76324c2c6119)
 
 The Random forest with hyperparameter tuning of 0.1 gives us an accuracy of 89%.
+<img width="454" alt="RF Model " src="https://github.com/jnliou/project4/assets/132161799/b2b3a6b5-a906-496e-874a-cc62c30743fa">
 
 The Model was then used to predict infected or uninfected cells. 
 
@@ -218,6 +238,7 @@ Since the two models are determining whether the cells are infected or not. The 
 The end result is that the model predicts:
 Uninfected cell at 96%
 Infected cell  at 96%
+<img width="454" alt="Final ACcuracy" src="https://github.com/jnliou/project4/assets/132161799/10b88329-3e1c-4519-ad99-9bef9011f574">
 
 D) Xception: 
 This is a pre-trained model on the popular image dataset called `imagenet`. 
