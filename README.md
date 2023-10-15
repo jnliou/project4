@@ -38,7 +38,7 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 
 * Git clone- https://github.com/jnliou/project4.git 
 * cd into directory- project4 
-* Start Flask app with [app.py](app.py) by writing python app.py in terminal. 
+* Start Flask app with [app.py](Project lab/app.py) by writing ```python app.py``` in terminal. 
 * This will be able to run the web app. 
 
 ![Data Pipeline](<Dataset/Project Timeline Builder - Frame 1.jpg>)
@@ -218,4 +218,6 @@ Pluggin used includes plotly, bootstrap and google fonts.
 
 
 ##### Presentation
+
+  ![Presentation Slides](https://www.canva.com/design/DAFwuowNvz0/wqoWiCOmdgKINQC8cjHQyQ/view?utm_content=DAFwuowNvz0&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
