@@ -15,6 +15,17 @@ import pandas as pd
 from smart_open import open
 
 
+from sqlalchemy import create_engine, Column, Integer, String, Date
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+
+
+# SQLite database path for the Infected data
+db_path = 'sqlite:///predictions.db'
+engine = create_engine(db_path)
+
+
+
 
 app = Flask(__name__)
 
@@ -35,7 +46,11 @@ csv_path = 'Data/combined_test_New.csv'
 
 
 def load_csv_to_dataframe(csv_path):
-    return pd.read_csv(csv_path)
+    df = pd.read_sql(' SELECT * FROM combined_test_New', con = engine.raw_connection())
+    return df
+
+# def load_csv_to_dataframe(csv_path):
+#     return pd.read_csv(csv_path)
 
 
 df = load_csv_to_dataframe(csv_path)
@@ -229,10 +244,6 @@ def get_total_scores():
     
 
     return (userTotal, modelTotal,userPercent,modelPercent)
-
-
-
-
 
 
 
