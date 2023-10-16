@@ -80,7 +80,7 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 ![Data Pipeline](<Dataset/Project Timeline Builder - Frame 1.jpg>)
 
 * [Project Management](https://trello.com/b/ZZba331m/project-4) 
-* [Diagram](https://miro.com/app/board/uXjVMgjTsg0=/?share_link_id=996896602000)
+* [Solution Architecture](https://miro.com/app/board/uXjVMgjTsg0=/?share_link_id=996896602000)
 
 ## Data Cleaning and Exploratory Data Analysis
 
