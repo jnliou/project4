@@ -103,7 +103,7 @@ Edge density comparison between uninfected and infected cells was conducted. His
 
 The average RGB color distribution of each image for infected and uninfected cells was compared. Histograms and T-tests were used to evaluate any statistical distinctions in average RGB color distribution.
 
-## Principal Component Analysis
+## [Principal Component Analysis](<pca.ipynb>)
 
 We used two methods to perform PCA on our image dataset. 
 
@@ -122,6 +122,7 @@ We used two methods to perform PCA on our image dataset.
     - Flatten images
     - Process in PCA
     - Plot on 2d map, color by class label
+  
 ![image](https://github.com/jnliou/project4/assets/131678606/c532a95e-964c-4f09-a0ce-d4496986d727)
 ![image](https://github.com/jnliou/project4/assets/131678606/3ee47546-9b9a-40db-b6db-4e4e44f9b81e)
 
@@ -162,7 +163,7 @@ IMAGE:
 | CNN  |   94%  |
 | K-NN  |  60%|
 
-**A) CNN (Convolutional Neural Network):**
+**A) [CNN](<sri-ML final.ipynb>):**
 
 The CNN model was designed for the classification of cell images into two categories: uninfected (0) and infected (1). It's aimed at assisting in the automated detection of infected cells, a task of significance in the detection of Malaria.
 
@@ -195,7 +196,7 @@ The CNN model was designed for the classification of cell images into two catego
   - The model's performance was evaluated using common binary classification metrics, including:
     - Accuracy: Measures the overall correctness of predictions. For this model, the accuracy was 94%.
 
-**B) Random Forest:**
+**B) [Random Forest](<Various_models.ipynb>):**
 
 The EDA data was analyzed by a Random Forest model to predict if a cell was infected or not. The Random Forest model was tuned with hyperparameters, and the important features were identified.
 
@@ -205,12 +206,12 @@ The EDA data was analyzed by a Random Forest model to predict if a cell was infe
 - **Results:**
   - The Random forest with hyperparameter tuning gave an accuracy of 89%.
 
-**C) Ensemble:**
+**C) [Ensemble](<Various_models.ipynb>):**
 
 Since the two models are determining whether the cells are infected or not, the predictions from these two models were pooled in a 60/40 ratio of CNN predictions and Random Forest predictions.
 
-**D) Xception:**
-
+**D) [Xception](<xception.ipynb>):**
+ 
 - **Model Architecture:**
       - Input Layer: Accepts images with dimensions (25, 25, 3)
       - Base Model: Xception with pre-trained weights
