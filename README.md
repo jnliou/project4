@@ -144,11 +144,11 @@ We tried a few different machine learning models to figure out the best accuracy
 
 ### Machine Learning Models:
 
-| EDA |                                    | IMAGE |
-| Model                        | Accuracy || Model || Accuracy |
-|------------------------------|----------||--------|----------|
-| Random Forest (RF)           | 83%      || CNN    | 0.83     |
-| Random Forest + hyperparameter| 89%     || KNN    | 0.6      |
+| EDA |                                    
+| Model:                       | Accuracy ||
+|------------------------------|----------|
+| Random Forest (RF)           | 83%      |
+| Random Forest + hyperparameter| 89%     |
 | RF + Gradient Boosting       | 83%      |
 | Linear Regression Model      | 32%      |
 | SVC Model                    | 79%      |
@@ -157,6 +157,11 @@ We tried a few different machine learning models to figure out the best accuracy
 | SVC+RF+NN                    | 81%      |
 | Decision Tree                | 0.74     |
 
+| IMAGE |
+| Model:|| Accuracy |
+|--------|----------|
+| CNN    | 0.83     |
+| KNN    | 0.6      |
 
 **A) CNN (Convolutional Neural Network):**
 
