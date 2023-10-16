@@ -42,9 +42,9 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 * Start Flask app with [app.py](Project lab/app.py) by writing ```python app.py``` in terminal. 
 * This will be able to run the web app. 
 
-![Data Pipeline](<Dataset/Project Timeline Builder - Frame 1.jpg>)
-
 ## Project Management:
+
+![Data Pipeline](<Dataset/Project Timeline Builder - Frame 1.jpg>)
 
 * [Project Management](https://trello.com/b/ZZba331m/project-4) 
 * [Diagram](https://miro.com/app/board/uXjVMgjTsg0=/?share_link_id=996896602000)
