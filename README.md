@@ -1,6 +1,39 @@
 # Machine Learning Modelling on Malaria Cell Image Recognition
 ![!\[science\](https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1g)](Dataset/science.jpg)
 
+# Table of Contents
+
+1. [Machine Learning Modelling on Malaria Cell Image Recognition](#machine-learning-modelling-on-malaria-cell-image-recognition)
+   1. [Introduction](#introduction)
+   2. [Team](#team)
+   3. [Programs Utilized](#programs-utilized)
+   4. [Dataset used](#dataset-used)
+   5. [To run the web app](#to-run-the-web-app)
+   6. [Project Management](#project-management)
+   7. [Data Cleaning and Exploratory Data Analysis](#data-cleaning-and-exploratory-data-analysis)
+      1. [Data Preprocessing](#data-preprocessing)
+         1. [Instructions on how to run the code](#instructions-on-how-to-run-the-code)
+      2. [Notes on the Data Cleaning/Preprocessing Process](#notes-on-the-data-cleaningpreprocessing-process)
+   8. [Exploratory Data Analysis](#exploratory-data-analysis)
+   9. [Principal Component Analysis](#principal-component-analysis)
+   10. [Data Integration and Export](#data-integration-and-export)
+   11. [Machine Learning Models](#machine-learning-models)
+2. [FLASK](#flask)
+   1. [Key Libraries Used](#key-libraries-used)
+   2. [Backend Processes & AWS Integration](#backend-processes--aws-integration)
+   3. [User Interaction & Data Handling](#user-interaction--data-handling)
+   4. [API Creation](#api-creation)
+3. [Front End Development for User Integration](#front-end-development-for-user-integration)
+   1. [Front-end](#front-end)
+   2. [Visualization](#visualization)
+   3. [Styling & Fonts](#styling--fonts)
+   4. [Backend & Storage](#backend--storage)
+   5. [User Interaction](#user-interaction)
+4. [Presentation](#presentation)
+5. [References](#references)
+
+## Introduction
+
 The primary aim of the project is to analyze cell image data of subjects that have malaria and subjects that do not have malaria and apply machine learning principles which will allow the machine to predict whether or not a subject has malaria. This can assist healthcare practitioners on easier metrics in terms of diagnosis, as well as the general public. This can allow the general public to possibly seek out further medical assistance if they believe they may have malaria.
 
 ## Our team:
@@ -128,19 +161,12 @@ We used two methods to perform PCA on our image dataset.
 
 ### Data Integration and Export
 
-The results of the various analyses were integrated into 4 DataFrames. 2 for the training data: ```Dataset/eda_train_infect.csv```, ```Dataset/eda_train_uninfect.csv```, and two for the testing data: ```Dataset/eda_test_infect.csv```, ```Dataset/eda_test_uninfect.csv``` for further analysis and reference.
-
-**Data Transformation**
-After cleaning, we transformed the data to make it suitable for our analysis and Machine Learning purposes. This involved the following:
-WRITE HERE 
-
-**Data Integration**
-Once we had consistent structures of data, we integrated it into a single DataFrame using SQLite.
+The results of the various analyses were integrated into 4 DataFrames. 2 for the training data: ```Dataset/eda_train_infect.csv```, ```Dataset/eda_train_uninfect.csv```, and two for the testing data: ```Dataset/eda_test_infect.csv```, ```Dataset/eda_test_uninfect.csv``` for further analysis and reference for useage on the ML model.
 
 **Step 6: Data Export**
 Data was exported to our website using a SQLite database which consisted of the predictions from our ML model, while our raw data (image dataset) was hosted on S3 bucket. 
 
-**Step 7: Building the Machine Learning**
+**Step 6: Building the Machine Learning**
 We tried a few different machine learning models to figure out the best accuracy for our end goal. 
 
 ### Machine Learning Models:
@@ -162,6 +188,9 @@ IMAGE:
 |-----:|---------------|
 | CNN  |   94%  |
 | K-NN  |  60%|
+| Xception  |   80%  |
+| Xception Optimized  |  79%|
+
 
 **A) [CNN](<sri-ML final.ipynb>):**
 
@@ -206,11 +235,7 @@ The EDA data was analyzed by a Random Forest model to predict if a cell was infe
 - **Results:**
   - The Random forest with hyperparameter tuning gave an accuracy of 89%.
 
-**C) [Ensemble](<Various_models.ipynb>):**
-
-Since the two models are determining whether the cells are infected or not, the predictions from these two models were pooled in a 60/40 ratio of CNN predictions and Random Forest predictions.
-
-**D) [Xception](<xception.ipynb>):**
+**C) [Xception](<xception.ipynb>):**
  
 - **Model Architecture:**
       - Input Layer: Accepts images with dimensions (25, 25, 3)
@@ -289,7 +314,6 @@ Pluggin used includes plotly, bootstrap and google fonts.
 * Users can select infected cells on the platform. Once they submit their selections, the data is sent to our backend for processing.
 **By seamlessly integrating these tools, we've been able to craft a dynamic and interactive platform for our users.**
  
-
   ![image](https://github.com/jnliou/project4/assets/15763802/fd8222cc-c4b3-4d18-b4f9-e9f6c61ef421)
 
 
@@ -297,3 +321,9 @@ Pluggin used includes plotly, bootstrap and google fonts.
 
   [Presentation Slides](https://www.canva.com/design/DAFwuowNvz0/wqoWiCOmdgKINQC8cjHQyQ/view?utm_content=DAFwuowNvz0&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
+##### References
+Byeon, E. (2020, September 11). Exploratory data analysis ideas for image classification. Medium. https://towardsdatascience.com/exploratory-data-analysis-ideas-for-image-classification-d3fc6bbfb2d2
+Centers for Disease Control and Prevention. (2019, October 18). CDC - Malaria - diagnosis & treatment (United States). Centers for Disease Control and Prevention. https://www.cdc.gov/malaria/diagnosis_treatment/index.html
+Google. (n.d.). Google fonts. https://fonts.google.com/
+Microscope photos, download the best free microscope stock ... - pexels. (n.d.). https://www.pexels.com/search/microscope/
+Tian, Y. (2020, June 17). Integrating image and tabular data for Deep Learning. Medium. https://towardsdatascience.com/integrating-image-and-tabular-data-for-deep-learning-9281397c7318
