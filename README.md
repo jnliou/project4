@@ -1,13 +1,46 @@
 # Machine Learning Modelling on Malaria Cell Image Recognition
 ![!\[science\](https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1g)](Dataset/science.jpg)
 
-The primary aim of the project is to analyze cell image data of subjects that have malaria and subjects that do not have malaria and apply machine learning principles which will allow the machine to predict whether or not a subject has malaria. This can assist healthcare practitioners on easier metrics in terms of diagnosis, as well as the general public. This can allow the general public to possibly seek out further medical assistance if they believe they may have malaria.
+# Table of Contents
+
+1. [Machine Learning Modelling on Malaria Cell Image Recognition](#machine-learning-modelling-on-malaria-cell-image-recognition)
+   1. [Introduction](#introduction)
+   2. [Team](#our-team)
+   3. [Programs Utilized](#programs-utilized)
+   4. [Dataset used](#dataset-used)
+   5. [To run the web app](#to-run-the-web-app)
+   6. [Project Management](#project-management)
+   7. [Data Cleaning and Exploratory Data Analysis](#data-cleaning-and-exploratory-data-analysis)
+      1. [Data Preprocessing](#data-preprocessing)
+         1. [Instructions on how to run the code](#instructions-on-how-to-run-the-code)
+      2. [Notes on the Data Cleaning/Preprocessing Process](#notes-on-the-data-cleaningpreprocessing-process)
+   8. [Exploratory Data Analysis](#exploratory-data-analysis)
+   9. [Principal Component Analysis](#principal-component-analysis)
+   10. [Data Integration and Export](#data-integration-and-export)
+   11. [Machine Learning Models](#machine-learning-models)
+2. [FLASK](#flask)
+   1. [Key Libraries Used](#key-libraries-used)
+   2. [Backend Processes & AWS Integration](#backend-processes--aws-integration)
+   3. [User Interaction & Data Handling](#user-interaction--data-handling)
+   4. [API Creation](#api-creation)
+3. [Front End Development for User Integration](#front-end-development-for-user-integration)
+   1. [Front-end](#front-end)
+   2. [Visualization](#visualization)
+   3. [Styling & Fonts](#styling--fonts)
+   4. [Backend & Storage](#backend--storage)
+   5. [User Interaction](#user-interaction)
+4. [Presentation](#presentation)
+5. [References](#references)
+
+## Introduction
+
+The primary goal of this project is to utilize machine learning to analyze cell images from both individuals with and without malaria. This analysis aims to predict whether a subject has malaria, offering valuable assistance to healthcare professionals in the diagnostic process and making it more accessible to the general public. To achieve this objective, we have developed a web application that integrates an optimized machine learning model. This application is designed for use by students in the fields of science and medicine. Users can select a set of images they suspect may contain malaria and compare their assessments to the predictions made by the machine learning model. The primary intention behind this application is to serve as an educational tool, facilitating users in the easier identification of malaria-infected cells.
 
 ## Our team:
-* [Julia Liou](https://github.com/jnliou) 
-* [Kevin Wan](https://github.com/zRandgris) 
-* [Manpreet Sharma](https://github.com/mehpree)
-* [Srinivas Jayaram](https://github.com/srinivasj1987) 
+* [Julia Liou](https://github.com/jnliou) - Data Analyst/Engineer & Product Manager
+* [Kevin Wan](https://github.com/zRandgris) - Flask & Web Developer
+* [Manpreet Sharma](https://github.com/mehpree) - Data Science & Back End Developer
+* [Srinivas Jayaram](https://github.com/srinivasj1987)  - Machine Learning Engineer & Data Scientest
 
 ## Programs Utilized:
 
@@ -39,15 +72,15 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 * Contact [Kevin Wan](https://github.com/zRandgris) for the config.py that goes with the webapp. 
 * Git clone- https://github.com/jnliou/project4.git 
 * cd into directory- project4/Project lab
-* Start Flask app with [app.py](Project lab/app.py) by writing ```python app.py``` in terminal. 
+* Start Flask app with [app.py](<Project lab/app.py>) by writing ```python app.py``` in terminal. 
 * This will be able to run the web app. 
-
-![Data Pipeline](<Dataset/Project Timeline Builder - Frame 1.jpg>)
 
 ## Project Management:
 
-* [Project Management](https://trello.com/b/ZZba331m/project-4) 
-* [Diagram](https://miro.com/app/board/uXjVMgjTsg0=/?share_link_id=996896602000)
+![Data Pipeline](<Dataset/Project Timeline Builder - Frame 1.jpg>)
+
+* [Project Management](https://trello.com/b/ZZba331m/project-4) - Utilized Trello to keep track of deadlines. 
+* [Solution Architecture](https://miro.com/app/board/uXjVMgjTsg0=/?share_link_id=996896602000) - Utilized Miro to create our solutions architecture to sort out our project timeline. 
 
 ## Data Cleaning and Exploratory Data Analysis
 
@@ -103,7 +136,17 @@ Edge density comparison between uninfected and infected cells was conducted. His
 
 The average RGB color distribution of each image for infected and uninfected cells was compared. Histograms and T-tests were used to evaluate any statistical distinctions in average RGB color distribution.
 
-## Principal Component Analysis
+Statistical Analysis - P Value
+| EDA | Mann Whitney U T-test|
+|-----:|---------------|
+| Average Red Channel Distribution  |   1.60 e-11 |
+| Average Green Channel Distribution  |  4.63 e-84|
+| Average Blue Channel Distribution  |   1.30e-17  |
+| Average Edge Density  |  1.20 e-302|
+| Average Blob Size  |  2.01e-17|
+| Max Blob Size  |  1.65e-15|
+
+## [Principal Component Analysis](<pca.ipynb>)
 
 We used two methods to perform PCA on our image dataset. 
 
@@ -122,24 +165,18 @@ We used two methods to perform PCA on our image dataset.
     - Flatten images
     - Process in PCA
     - Plot on 2d map, color by class label
+  
 ![image](https://github.com/jnliou/project4/assets/131678606/c532a95e-964c-4f09-a0ce-d4496986d727)
 ![image](https://github.com/jnliou/project4/assets/131678606/3ee47546-9b9a-40db-b6db-4e4e44f9b81e)
 
 ### Data Integration and Export
 
-The results of the various analyses were integrated into 4 DataFrames. 2 for the training data: ```Dataset/eda_train_infect.csv```, ```Dataset/eda_train_uninfect.csv```, and two for the testing data: ```Dataset/eda_test_infect.csv```, ```Dataset/eda_test_uninfect.csv``` for further analysis and reference.
-
-**Data Transformation**
-After cleaning, we transformed the data to make it suitable for our analysis and Machine Learning purposes. This involved the following:
-WRITE HERE 
-
-**Data Integration**
-Once we had consistent structures of data, we integrated it into a single DataFrame using SQLite.
+The results of the various analyses were integrated into 4 DataFrames. 2 for the training data: ```Dataset/eda_train_infect.csv```, ```Dataset/eda_train_uninfect.csv```, and two for the testing data: ```Dataset/eda_test_infect.csv```, ```Dataset/eda_test_uninfect.csv``` for further analysis and reference for useage on the ML model.
 
 **Step 6: Data Export**
 Data was exported to our website using a SQLite database which consisted of the predictions from our ML model, while our raw data (image dataset) was hosted on S3 bucket. 
 
-**Step 7: Building the Machine Learning**
+**Step 6: Building the Machine Learning**
 We tried a few different machine learning models to figure out the best accuracy for our end goal. 
 
 ### Machine Learning Models:
@@ -161,8 +198,11 @@ IMAGE:
 |-----:|---------------|
 | CNN  |   94%  |
 | K-NN  |  60%|
+| Xception  |   80%  |
+| Xception Optimized  |  79%|
 
-**A) CNN (Convolutional Neural Network):**
+
+**A) [CNN](<optimized_MLmodel.ipynb>):**
 
 The CNN model was designed for the classification of cell images into two categories: uninfected (0) and infected (1). It's aimed at assisting in the automated detection of infected cells, a task of significance in the detection of Malaria.
 
@@ -195,7 +235,7 @@ The CNN model was designed for the classification of cell images into two catego
   - The model's performance was evaluated using common binary classification metrics, including:
     - Accuracy: Measures the overall correctness of predictions. For this model, the accuracy was 94%.
 
-**B) Random Forest:**
+**B) [Random Forest](<Various_models.ipynb>):**
 
 The EDA data was analyzed by a Random Forest model to predict if a cell was infected or not. The Random Forest model was tuned with hyperparameters, and the important features were identified.
 
@@ -205,22 +245,42 @@ The EDA data was analyzed by a Random Forest model to predict if a cell was infe
 - **Results:**
   - The Random forest with hyperparameter tuning gave an accuracy of 89%.
 
-**C) Ensemble:**
+**C) [Xception](<xception.ipynb>):**
+ 
+- **Model Architecture:**
+      - Input Layer: Accepts images with dimensions (25, 25, 3)
+      - Base Model: Xception with pre-trained weights
+      - Input Layer: Accepts images with variable dimensions
+      - Convolutional and Separable Convolutional Layers
+      - Batch Normalization Layers
+      - Activation Layers
+      - Max-Pooling Layers
+      - Global Average Pooling Layer
+      - Two Dense (Fully Connected) Layers
+    - Output Layer: Dense layer with 1 neuron and sigmoid activation
+    - Freeze some layers in the base model to prevent them from being trained.
 
-Since the two models are determining whether the cells are infected or not, the predictions from these two models were pooled in a 60/40 ratio of CNN predictions and Random Forest predictions.
+- **Model Training:**
+  - Loss Function: Binary cross-entropy.
+  - Optimizer: Adam
+  - Batch Size: 32
+  - Epochs: 20 for base model and 10 for top model
+  - Validation Split: 20% of the training data was used for validation during training to monitor model performance.
 
-**D) Xception:**
+- **Model Evaluation:**
+  - The model's performance was evaluated using common binary classification metrics, including:
+    - Accuracy: For base model was 78-80% while for top model was 77%. 
 
-This is a pre-trained model on the popular image dataset called `imagenet`. We built our base model using the pre-trained model and then added a layer of our own testing and training dataset to see how it will perform. We got an accuracy of 79% over 20 epochs.
+- This is a pre-trained model on the popular image dataset called `imagenet`. We built our base model using the pre-trained model and then added a layer of our own testing and training dataset to see how it performs. We got an accuracy of 79% over 20 epochs.
+- Model was fine-tuned by adding creating `top_model` on top of the `base_model` by feeding the output from the base model to the top model. It was interesting to notice that the accuracy did not change much but the loss had a significant difference. 
 
-These machine learning models were used to classify cell images into infected and uninfected categories for the Malaria detection task.
-
-The graphs below depict that the data was overfitting at certain points.
-
-![image](https://github.com/jnliou/project4/assets/131678606/8011ae48-a516-4752-b0aa-6727f4fb267f)
-![image](https://github.com/jnliou/project4/assets/131678606/eaa75a2e-0443-441d-8f7e-2cd2ae798ccf)
-
-
+- **Model Summary:**
+    - Model architecture with detailed layer information for top model.
+    - Total parameters: 22,960,681 (87.59 MB)
+    - Trainable parameters: 2,099,201 (8.01 MB)
+    - Non-trainable parameters: 20,861,480 (79.58 MB)
+    - The graphs in `xception.ipynb` depict that the data was overfitting at certain points but the validation set performed better than the training data consistently. 
+    
 ## FLASK
 ### Key Libraries Used:
 
@@ -244,10 +304,9 @@ The graphs below depict that the data was overfitting at certain points.
   
 **These intricacies, woven together, create a robust and interactive platform tailored to our users' needs.**
 
-* Codes found here for helping to run Flask: [helper.py](helper.py)
-* To run Flask: [app.py](app.py)
-* SQLite Database: [WRITEHERE.db](project3.db)
-* Queries on SQLite to create tables: [SQLite-query](sqlite-query)
+* To run Flask: [app.py](<Project lab/app.py>)
+* SQLite Database: [predictions.db](<Project lab/predictions.db>)
+* SQL Database Generation: [sqlite.ipynb](<Project lab/sqlite.ipynb>)
 
 ## Front End Development for User Integration
 Pluggin used includes plotly, bootstrap and google fonts.
@@ -265,7 +324,6 @@ Pluggin used includes plotly, bootstrap and google fonts.
 * Users can select infected cells on the platform. Once they submit their selections, the data is sent to our backend for processing.
 **By seamlessly integrating these tools, we've been able to craft a dynamic and interactive platform for our users.**
  
-
   ![image](https://github.com/jnliou/project4/assets/15763802/fd8222cc-c4b3-4d18-b4f9-e9f6c61ef421)
 
 
@@ -273,3 +331,10 @@ Pluggin used includes plotly, bootstrap and google fonts.
 
   [Presentation Slides](https://www.canva.com/design/DAFwuowNvz0/wqoWiCOmdgKINQC8cjHQyQ/view?utm_content=DAFwuowNvz0&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
+##### References
+* Byeon, E. (2020, September 11). Exploratory data analysis ideas for image classification. Medium. https://towardsdatascience.com/exploratory-data-analysis-ideas-for-image-classification-d3fc6bbfb2d2
+* Centers for Disease Control and Prevention. (2019, October 18). CDC - Malaria - diagnosis & treatment (United States). Centers for Disease Control and Prevention. https://www.cdc.gov/malaria/diagnosis_treatment/index.html
+* Google. (n.d.). Google fonts. https://fonts.google.com/
+* Microscope photos, download the best free microscope stock ... - pexels. (n.d.). https://www.pexels.com/search/microscope/
+* Team, K. (n.d.). Keras Documentation: Transfer Learning &amp; Fine-tuning. https://keras.io/guides/transfer_learning/ 
+* Tian, Y. (2020, June 17). Integrating image and tabular data for Deep Learning. Medium. https://towardsdatascience.com/integrating-image-and-tabular-data-for-deep-learning-9281397c7318
