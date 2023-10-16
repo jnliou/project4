@@ -34,7 +34,7 @@
 
 ## Introduction
 
-The primary aim of the project is to analyze cell image data of subjects that have malaria and subjects that do not have malaria and apply machine learning principles which will allow the machine to predict whether or not a subject has malaria. This can assist healthcare practitioners on easier metrics in terms of diagnosis, as well as the general public. This can allow the general public to possibly seek out further medical assistance if they believe they may have malaria.
+The primary goal of this project is to utilize machine learning to analyze cell images from both individuals with and without malaria. This analysis aims to predict whether a subject has malaria, offering valuable assistance to healthcare professionals in the diagnostic process and making it more accessible to the general public. To achieve this objective, we have developed a web application that integrates an optimized machine learning model. This application is designed for use by students in the fields of science and medicine. Users can select a set of images they suspect may contain malaria and compare their assessments to the predictions made by the machine learning model. The primary intention behind this application is to serve as an educational tool, facilitating users in the easier identification of malaria-infected cells.
 
 ## Our team:
 * [Julia Liou](https://github.com/jnliou) 
