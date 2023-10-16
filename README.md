@@ -136,6 +136,16 @@ Edge density comparison between uninfected and infected cells was conducted. His
 
 The average RGB color distribution of each image for infected and uninfected cells was compared. Histograms and T-tests were used to evaluate any statistical distinctions in average RGB color distribution.
 
+Statistical Analysis - P Value
+| EDA | Mann Whitney U T-test|
+|-----:|---------------|
+| Average Red Channel Distribution  |   1.60 e-11 |
+| Average Green Channel Distribution  |  4.63 e-84|
+| Average Blue Channel Distribution  |   1.30e-17  |
+| Average Edge Density  |  1.20 e-302|
+| Average Blob Size  |  2.01e-17|
+| Max Blob Size  |  1.65e-15|
+
 ## [Principal Component Analysis](<pca.ipynb>)
 
 We used two methods to perform PCA on our image dataset. 
@@ -326,4 +336,5 @@ Pluggin used includes plotly, bootstrap and google fonts.
 * Centers for Disease Control and Prevention. (2019, October 18). CDC - Malaria - diagnosis & treatment (United States). Centers for Disease Control and Prevention. https://www.cdc.gov/malaria/diagnosis_treatment/index.html
 * Google. (n.d.). Google fonts. https://fonts.google.com/
 * Microscope photos, download the best free microscope stock ... - pexels. (n.d.). https://www.pexels.com/search/microscope/
+* Team, K. (n.d.). Keras Documentation: Transfer Learning &amp; Fine-tuning. https://keras.io/guides/transfer_learning/ 
 * Tian, Y. (2020, June 17). Integrating image and tabular data for Deep Learning. Medium. https://towardsdatascience.com/integrating-image-and-tabular-data-for-deep-learning-9281397c7318
