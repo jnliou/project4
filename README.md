@@ -103,7 +103,7 @@ Edge density comparison between uninfected and infected cells was conducted. His
 
 The average RGB color distribution of each image for infected and uninfected cells was compared. Histograms and T-tests were used to evaluate any statistical distinctions in average RGB color distribution.
 
-## Principal Component Analysis
+## [Principal Component Analysis](<pca.ipynb>)
 
 We used two methods to perform PCA on our image dataset. 
 
@@ -206,7 +206,7 @@ The EDA data was analyzed by a Random Forest model to predict if a cell was infe
 - **Results:**
   - The Random forest with hyperparameter tuning gave an accuracy of 89%.
 
-**C) Ensemble:**
+**C) [Ensemble](<Various_models.ipynb>):**
 
 Since the two models are determining whether the cells are infected or not, the predictions from these two models were pooled in a 60/40 ratio of CNN predictions and Random Forest predictions.
 
