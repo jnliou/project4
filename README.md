@@ -211,16 +211,40 @@ Since the two models are determining whether the cells are infected or not, the 
 
 **D) Xception:**
 
-This is a pre-trained model on the popular image dataset called `imagenet`. We built our base model using the pre-trained model and then added a layer of our own testing and training dataset to see how it will perform. We got an accuracy of 79% over 20 epochs.
+- **Model Architecture:**
+      - Input Layer: Accepts images with dimensions (25, 25, 3)
+      - Base Model: Xception with pre-trained weights
+      - Input Layer: Accepts images with variable dimensions
+      - Convolutional and Separable Convolutional Layers
+      - Batch Normalization Layers
+      - Activation Layers
+      - Max-Pooling Layers
+      - Global Average Pooling Layer
+      - Two Dense (Fully Connected) Layers
+    - Output Layer: Dense layer with 1 neuron and sigmoid activation
+    - Freeze some layers in the base model to prevent them from being trained.
 
-These machine learning models were used to classify cell images into infected and uninfected categories for the Malaria detection task.
+- **Model Training:**
+  - Loss Function: Binary cross-entropy.
+  - Optimizer: Adam
+  - Batch Size: 32
+  - Epochs: 20 for base model and 10 for top model
+  - Validation Split: 20% of the training data was used for validation during training to monitor model performance.
 
-The graphs below depict that the data was overfitting at certain points.
+- **Model Evaluation:**
+  - The model's performance was evaluated using common binary classification metrics, including:
+    - Accuracy: For base model was 78-80% while for top model was 77%. 
 
-![image](https://github.com/jnliou/project4/assets/131678606/8011ae48-a516-4752-b0aa-6727f4fb267f)
-![image](https://github.com/jnliou/project4/assets/131678606/eaa75a2e-0443-441d-8f7e-2cd2ae798ccf)
+- This is a pre-trained model on the popular image dataset called `imagenet`. We built our base model using the pre-trained model and then added a layer of our own testing and training dataset to see how it performs. We got an accuracy of 79% over 20 epochs.
+- Model was fine-tuned by adding creating `top_model` on top of the `base_model` by feeding the output from the base model to the top model. It was interesting to notice that the accuracy did not change much but the loss had a significant difference. 
 
-
+- **Model Summary:**
+    - Model architecture with detailed layer information for top model.
+    - Total parameters: 22,960,681 (87.59 MB)
+    - Trainable parameters: 2,099,201 (8.01 MB)
+    - Non-trainable parameters: 20,861,480 (79.58 MB)
+    - The graphs in `xception.ipynb` depict that the data was overfitting at certain points but the validation set performed better than the training data consistently. 
+    
 ## FLASK
 ### Key Libraries Used:
 
