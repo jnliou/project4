@@ -37,10 +37,10 @@
 The primary goal of this project is to utilize machine learning to analyze cell images from both individuals with and without malaria. This analysis aims to predict whether a subject has malaria, offering valuable assistance to healthcare professionals in the diagnostic process and making it more accessible to the general public. To achieve this objective, we have developed a web application that integrates an optimized machine learning model. This application is designed for use by students in the fields of science and medicine. Users can select a set of images they suspect may contain malaria and compare their assessments to the predictions made by the machine learning model. The primary intention behind this application is to serve as an educational tool, facilitating users in the easier identification of malaria-infected cells.
 
 ## Our team:
-* [Julia Liou](https://github.com/jnliou) 
-* [Kevin Wan](https://github.com/zRandgris) 
-* [Manpreet Sharma](https://github.com/mehpree)
-* [Srinivas Jayaram](https://github.com/srinivasj1987) 
+* [Julia Liou](https://github.com/jnliou) - Data Analyst/Engineer & Product Manager
+* [Kevin Wan](https://github.com/zRandgris) - Flask & Web Developer
+* [Manpreet Sharma](https://github.com/mehpree) - Data Science & Back End Developer
+* [Srinivas Jayaram](https://github.com/srinivasj1987)  - Machine Learning Engineer & Data Scientest
 
 ## Programs Utilized:
 
@@ -79,8 +79,8 @@ The primary goal of this project is to utilize machine learning to analyze cell 
 
 ![Data Pipeline](<Dataset/Project Timeline Builder - Frame 1.jpg>)
 
-* [Project Management](https://trello.com/b/ZZba331m/project-4) 
-* [Solution Architecture](https://miro.com/app/board/uXjVMgjTsg0=/?share_link_id=996896602000)
+* [Project Management](https://trello.com/b/ZZba331m/project-4) - Utilized Trello to keep track of deadlines. 
+* [Solution Architecture](https://miro.com/app/board/uXjVMgjTsg0=/?share_link_id=996896602000) - Utilized Miro to create our solutions architecture to sort out our project timeline. 
 
 ## Data Cleaning and Exploratory Data Analysis
 
