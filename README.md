@@ -268,10 +268,9 @@ Since the two models are determining whether the cells are infected or not, the 
   
 **These intricacies, woven together, create a robust and interactive platform tailored to our users' needs.**
 
-* Codes found here for helping to run Flask: [helper.py](helper.py)
-* To run Flask: [app.py](app.py)
-* SQLite Database: [WRITEHERE.db](project3.db)
-* Queries on SQLite to create tables: [SQLite-query](sqlite-query)
+* To run Flask: [app.py](<Project lab/app.py>)
+* SQLite Database: [predictions.db](<Project lab/predictions.db>)
+* SQL Database Generation: [sqlite.ipynb](<Project lab/sqlite.ipynb>)
 
 ## Front End Development for User Integration
 Pluggin used includes plotly, bootstrap and google fonts.
