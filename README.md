@@ -72,7 +72,7 @@ The primary aim of the project is to analyze cell image data of subjects that ha
 * Contact [Kevin Wan](https://github.com/zRandgris) for the config.py that goes with the webapp. 
 * Git clone- https://github.com/jnliou/project4.git 
 * cd into directory- project4/Project lab
-* Start Flask app with [app.py](Project lab/app.py) by writing ```python app.py``` in terminal. 
+* Start Flask app with [app.py](<Project lab/app.py>) by writing ```python app.py``` in terminal. 
 * This will be able to run the web app. 
 
 ## Project Management:
