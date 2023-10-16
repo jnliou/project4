@@ -5,7 +5,7 @@
 
 1. [Machine Learning Modelling on Malaria Cell Image Recognition](#machine-learning-modelling-on-malaria-cell-image-recognition)
    1. [Introduction](#introduction)
-   2. [Team](#Our-team:)
+   2. [Team](#our-team)
    3. [Programs Utilized](#programs-utilized)
    4. [Dataset used](#dataset-used)
    5. [To run the web app](#to-run-the-web-app)
