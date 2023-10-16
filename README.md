@@ -156,7 +156,7 @@ EDA:
 | SVC+RF+NN                    | 81%      |
 | Decision Tree                | 0.74     |
 
-* IMAGE
+IMAGE:
 | Model | Accuracy|
 |-----:|---------------|
 | CNN  |   0.83  |
