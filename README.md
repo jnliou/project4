@@ -154,13 +154,13 @@ EDA:
 | SVC+Hyp                      | 85%      |
 | SVC + PCA                    | 79%      |
 | SVC+RF+NN                    | 81%      |
-| Decision Tree                | 0.74     |
+| Decision Tree                | 74%     |
 
 IMAGE:
 | Model | Accuracy|
 |-----:|---------------|
-| CNN  |   0.83  |
-| KNN  |  0.6  |
+| CNN  |   94%  |
+| K-NN  |  60%|
 
 **A) CNN (Convolutional Neural Network):**
 
