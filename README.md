@@ -202,7 +202,7 @@ IMAGE:
 | Xception Optimized  |  79%|
 
 
-**A) [CNN](<sri-ML final.ipynb>):**
+**A) [CNN](<optimized_MLmodel.ipynb>):**
 
 The CNN model was designed for the classification of cell images into two categories: uninfected (0) and infected (1). It's aimed at assisting in the automated detection of infected cells, a task of significance in the detection of Malaria.
 
