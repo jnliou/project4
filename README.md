@@ -39,8 +39,8 @@ The primary goal of this project is to utilize machine learning to analyze cell 
 ## Our team:
 * [Julia Liou](https://github.com/jnliou) - Data Analyst/Engineer & Product Manager
 * [Kevin Wan](https://github.com/zRandgris) - Flask & Web Developer
-* [Manpreet Sharma](https://github.com/mehpree) - Data Science & Back End Developer
-* [Srinivas Jayaram](https://github.com/srinivasj1987)  - Machine Learning Engineer & Data Scientest
+* [Manpreet Sharma](https://github.com/mehpree) - Data Scientist & Back End Developer
+* [Srinivas Jayaram](https://github.com/srinivasj1987)  - Machine Learning Engineer & Data Scientist
 
 ## Programs Utilized:
 
