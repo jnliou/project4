@@ -237,6 +237,8 @@ def submit_choices():
 
 def get_total_scores():
     global counts
+    global userTotal
+    global modelTotal
     userTotal = sum([score['User'] for score in scores])
     modelTotal = sum([score['Model'] for score in scores])
     userPercent = userTotal/counts
@@ -255,7 +257,14 @@ def clear_session():
     session.clear()
 
     global scores
+    global userTotal
+    global modelTotal
+    global counts
+    counts = 0
     scores = []
+    userTotal =[]
+    modelTotal = []
+    
     return jsonify({'status': 'data cleared'})
 
 
