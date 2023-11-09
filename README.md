@@ -1,6 +1,8 @@
 # Machine Learning Modelling on Malaria Cell Image Recognition
 ![!\[science\](https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1g)](Dataset/science.jpg)
 
+Feel free to view our [website](https://jnliou.github.io/malaria/), which summarizes our Machine Learning Project. 
+
 # Table of Contents
 
 1. [Machine Learning Modelling on Malaria Cell Image Recognition](#machine-learning-modelling-on-malaria-cell-image-recognition)
